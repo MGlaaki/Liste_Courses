@@ -330,3 +330,325 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
 
 
+Started DELETE "/articles/4" for 127.0.0.1 at 2018-03-11 20:28:33 +0100
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Lxmu5Je7YPCqPy7z1eWChL3q57kQBwZVTb7JkOm7wfG1dfZh5/jNKlELa/6P0KB1Pma4igatoRY5AhYLRyZWWA==", "id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 4]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 14ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:28:33 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/2/edit" for 127.0.0.1 at 2018-03-11 20:32:23 +0100
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.1ms)
+  Rendered articles/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/articles/2" for 127.0.0.1 at 2018-03-11 20:32:26 +0100
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"brTQq7ILuOF84gVIHKrP5jXNaVxAtQbO/mJZKH3S3ZoEFhpZjuVPL3B0yb3Wsht1XGlulLCzMBhjX13xIChpww==", "article"=>{"article"=>"fromages", "ajoutepar"=>"brigite"}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "articles" SET "article" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["article", "fromages"], ["updated_at", "2018-03-11 19:32:26.341962"], ["id", 2]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 15ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:32:26 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:37:38 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 2245ms (Views: 2238.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-03-11 20:37:44 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (14.2ms)
+  Rendered articles/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:37:46 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:39:32 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 138ms (Views: 130.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:40:51 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.):
+    4:     <title>LiteCourses</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___159792649800746562_69920964981580'
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:41:21 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 84ms (Views: 82.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:44:08 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1096ms (Views: 1094.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:45:33 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 921ms (Views: 920.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-03-11 20:45:39 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (14.5ms)
+  Rendered articles/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:45:41 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-03-11 20:45:43 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (30.4ms)
+  Rendered articles/new.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 66ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:45:45 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:45:58 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:50:17 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/config
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/images
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/javascripts
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/stylesheets
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.5/lib/assets/compiled
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.5/lib/assets/compiled
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/cthaat/rails-workspace/Liste_Courses/node_modules
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9:   </head>
+    10: 
+    11:   <body>
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___159792649800746562_69920972635820'
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:51:05 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/config
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/images
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/javascripts
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/stylesheets
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.5/lib/assets/compiled
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.5/lib/assets/compiled
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/cthaat/rails-workspace/Liste_Courses/node_modules
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/images):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     9:   </head>
+    10: 
+    11:   <body>
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___159792649800746562_69920835851640'
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:51:56 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/config
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/images
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/javascripts
+  /home/cthaat/rails-workspace/Liste_Courses/app/assets/stylesheets
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.5/lib/assets/compiled
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.5/lib/assets/compiled
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/cthaat/rails-workspace/Liste_Courses/node_modules
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/cthaat/.rvm/gems/ruby-2.4.1/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>LiteCourses</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:15
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1687690802641101935_47085929162180'
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:54:15 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 1417ms (Views: 1409.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2018-03-11 20:54:19 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (11.8ms)
+  Rendered articles/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2018-03-11 20:54:51 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NwWi/No4aug+uf+2v/lq2ZPkjU/+Rg+1TJPG/2c73uI5UEW2yjMFyJhdw3nCkTfA0ic2VVf0YAnncB8aDAx5cA==", "article"=>{"article"=>"nouveau test", "ajoutepar"=>"francis"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("article", "ajoutepar", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["article", "nouveau test"], ["ajoutepar", "francis"], ["created_at", "2018-03-11 19:54:51.524453"], ["updated_at", "2018-03-11 19:54:51.524453"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 15ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:54:51 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/7/edit" for 127.0.0.1 at 2018-03-11 20:54:54 +0100
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (3.0ms)
+  Rendered articles/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-03-11 20:54:57 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
