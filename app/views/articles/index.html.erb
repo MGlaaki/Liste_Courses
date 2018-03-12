@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
+<h1>Liste de courses</h1>
 
 <table>
   <thead>
@@ -14,21 +14,20 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.article %></td>
-        <td><%= article.ajoutepar %></td>
-        <td><%= link_to 'Show', article %></td>
+        <td><%= article.article.capitalize %></td>
+        <td><%= article.ajoutepar.capitalize %></td>
+        <td><%= button_to '-', article, method: :delete %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
-        <td>test <%=f.text_field :article%></td>
+        <td><%=f.text_field :article%></td>
+        <td><%=f.text_field :ajoutepar%></td>
+        <td><%=f.submit "+"%></td>
         <%end%>
       </tr>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Article', new_article_path %>
