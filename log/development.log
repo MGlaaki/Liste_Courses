@@ -714,3 +714,41 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 39ms (Views: 38.4ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-03-12 20:13:16 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 204ms (Views: 192.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-12 20:15:38 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (127.7ms)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `textfield' for #<ActionView::Helpers::FormBuilder:0x007f2321b30f88>
+Did you mean?  text_field):
+    23:     <% end %>
+    24:       <tr>
+    25:         <%= form_for @article do |f|%>
+    26:         <td>test <%=f.textfield :article%></td>
+    27:         <%end%>
+    28:       </tr>
+    29:   </tbody>
+  
+app/views/articles/index.html.erb:26:in `block in _app_views_articles_index_html_erb___4182486496552649150_69894433481300'
+app/views/articles/index.html.erb:25:in `_app_views_articles_index_html_erb___4182486496552649150_69894433481300'
+Started GET "/" for 127.0.0.1 at 2018-03-12 20:15:56 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
