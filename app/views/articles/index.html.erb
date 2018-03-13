@@ -9,7 +9,6 @@
   <thead>
     <tr>
       <th>Article</th>
-      <th>Ajouté par </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +17,11 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= article.article.capitalize%></td>
-        <td><%= article.ajoutepar.capitalize %></td>
         <td><%= button_to '-', article, {class: 'btn-sm btn-danger', method: :delete}  %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
         <td><%=f.text_field :article%></td>
-        <td><%=f.text_field :ajoutepar%></td>
         <td><%=f.submit "+", {class: 'btn-sm btn-success'}%></td>
         <%end%>
       </tr>
