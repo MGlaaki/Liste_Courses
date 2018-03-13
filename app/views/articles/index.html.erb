@@ -1,8 +1,11 @@
+
+
+  <div id="main-container" class="container-fluid">
 <p id="notice"><%= notice %></p>
 
 <h1>Liste de courses</h1>
 
-<table>
+<table class="table-hover table"
   <thead>
     <tr>
       <th>Article</th>
@@ -14,20 +17,18 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.article.capitalize %></td>
+        <td><%= article.article.capitalize%></td>
         <td><%= article.ajoutepar.capitalize %></td>
-        <td><%= button_to '-', article, method: :delete %></td>
+        <td><%= button_to '-', article, {class: 'btn-sm btn-danger', method: :delete}  %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      </tr>
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
         <td><%=f.text_field :article%></td>
         <td><%=f.text_field :ajoutepar%></td>
-        <td><%=f.submit "+"%></td>
+        <td><%=f.submit "+", {class: 'btn-sm btn-success'}%></td>
         <%end%>
       </tr>
   </tbody>
 </table>
-
-<br>
+</div>

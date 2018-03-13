@@ -20,7 +20,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
       post articles_url, params: { article: { ajoutepar: @article.ajoutepar, article: @article.article } }
     end
 
-    assert_redirected_to article_url(Article.last)
+    assert_redirected_to articles_url
   end
 
   test "should show article" do
@@ -35,7 +35,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update article" do
     patch article_url(@article), params: { article: { ajoutepar: @article.ajoutepar, article: @article.article } }
-    assert_redirected_to article_url(@article)
+    assert_redirected_to articles_url
   end
 
   test "should destroy article" do
