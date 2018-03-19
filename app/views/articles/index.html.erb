@@ -21,7 +21,7 @@
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
-        <td><%=f.text_field :article%></td>
+        <td><%=f.text_field :article, :autofocus => true %></td>
         <td><%=f.submit "+", {class: 'btn-sm btn-success'}%></td>
         <%end%>
       </tr>
