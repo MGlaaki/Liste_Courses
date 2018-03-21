@@ -29,7 +29,7 @@
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
-        <td><%=f.text_field :article, :autofocus => true %></td>
+        <td><%=f.text_field :article, :autofocus => false %></td>
         <td><%=button_tag "", type: 'submit', class: 'btn-lg btn-success glyphicon glyphicon-plus'%></td>
         <%end%>
       </tr>
