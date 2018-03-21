@@ -4804,3 +4804,11 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/articles" for 127.0.0.1 at 2018-03-21 21:20:12 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 77ms (Views: 75.9ms | ActiveRecord: 0.2ms)
+
+
