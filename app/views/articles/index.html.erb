@@ -1,3 +1,13 @@
+<script>function myFunction(event)
+  {
+    var articleClicked = event.target.id
+    if (document.getElementById(articleClicked).style.textDecoration == "line-through"){
+      document.getElementById(articleClicked).style.textDecoration = "";
+    } else {
+      document.getElementById(articleClicked).style.textDecoration = "line-through";
+    }
+  }
+</script>
 
 
   <div id="main-container" class="responsive-table">
@@ -8,14 +18,13 @@
   <thead>
     <tr>
       <th>Article</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.article.capitalize%></td>
+        <td id=<%="article#{article.id}"%> onclick="myFunction(event)"><%= article.article.capitalize%></td>
         <td><%= link_to "", article, class: 'btn-lg btn-danger glyphicon glyphicon-trash',method: :delete%></td>
     <% end %>
       <tr>
