@@ -62,6 +62,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy_all
+    @articles = Article.all
+    @articles.each do |a|
+      a.destroy
+    end
+    redirect_to index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
