@@ -18,7 +18,7 @@
   <thead>
     <tr>
       <th>Article</th>
-      <th><%= link_to "Reset", 'destroy_all', class: 'btn-lg btn-danger',method: :get%></td
+      <th><%= link_to "Reset", 'destroy_all', class: 'btn-lg btn-danger',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></td
     </tr>
   </thead>
 
