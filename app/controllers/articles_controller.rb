@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_url, notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
-        format.html { render :new }
+        format.html { redirect_to articles_url }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -78,6 +78,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
+
       params.require(:article).permit(:article, :ajoutepar)
     end
 end
