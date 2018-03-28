@@ -5,13 +5,18 @@ body {
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 1.4em;
+  font-size: 1.7em;
   line-height: 18px;
 }
 
-p, ol, ul, td {
+h1 {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 1.4em;
+  font-size: 2em;
+}
+
+p, ol, ul, td, th {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 1.7em;
   line-height: 8px;
 }
 
@@ -52,6 +57,11 @@ div {
   color: green;
 }
 
+#alert {
+  color: red;
+}
+
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -69,7 +79,7 @@ div {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 50px;
+    font-size: 10px;
     margin: -7px -7px 0;
     background-color: #c00;
     color: #fff;

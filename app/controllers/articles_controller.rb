@@ -29,10 +29,10 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to articles_url, notice: 'Article was successfully created.' }
+        format.html { redirect_to articles_url, notice: 'Element ajouté.' }
         format.json { render :show, status: :created, location: @article }
       else
-        format.html { redirect_to articles_url }
+        format.html { redirect_to articles_url, alert: 'Impossible d\'ajouter un élément vide'}
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to articles_url, notice: 'Element supprimé' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,9 @@ class ArticlesController < ApplicationController
   def destroy_all
     @articles = Article.all
     @articles.delete_all
-    redirect_to index
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: 'Reset liste effectué'}
+    end
   end
 
   private
