@@ -64,9 +64,7 @@ class ArticlesController < ApplicationController
 
   def destroy_all
     @articles = Article.all
-    @articles.each do |a|
-      a.destroy
-    end
+    @articles.delete_all
     redirect_to index
   end
 
@@ -78,7 +76,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-
       params.require(:article).permit(:article, :ajoutepar)
     end
 end
