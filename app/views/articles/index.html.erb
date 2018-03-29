@@ -10,9 +10,6 @@
 </script>
 
 
-<p id=notice><%=notice%></p>
-
-<p id=alert><%=alert%></p>
 
   <div id="main-container" class="responsive-table">
 
@@ -44,6 +41,8 @@
 </table>
 </div>
 
+<p id=notice><%=notice%></p>
+<p id=alert><%=alert%></p>
 
   <%# button_tag "", action:"/articles/#{article[:id]}", class: 'btn-sm btn-danger glyphicon glyphicon-minus', method: :delete%>
   <%#link_to (‘<i class=“fa fa-thumbs-up fa-lg”> </i>’).html_safe, vote_path(@image), :method=> :delete, :remote=> true%>
