@@ -17,24 +17,24 @@
 
 <h1>Liste de courses</h1>
 
-<table class="table-hover table"
+<table width=100% class="table-hover table"
   <thead>
     <tr>
+      <th id="leftRow"><%= link_to "", 'destroy_all', class: 'btn-lg btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></td>
       <th>Article</th>
-      <th><%= link_to "", 'destroy_all', class: 'btn-lg btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></td
     </tr>
   </thead>
 
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td id="leftRow"><%= link_to "", article, class: 'btn-lg btn-danger glyphicon glyphicon-minus',method: :delete%></td>
         <td id=<%="article#{article.id}"%> onclick="myFunction(event)"><%= article.article.capitalize%></td>
-        <td><%= link_to "", article, class: 'btn-lg btn-danger glyphicon glyphicon-minus',method: :delete%></td>
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
+        <td id="leftRow"><%=button_tag "", type: 'submit', class: 'btn-lg btn-success glyphicon glyphicon-plus'%></td>
         <td><%=f.text_field :article, :autofocus => true %></td>
-        <td><%=button_tag "", type: 'submit', class: 'btn-lg btn-success glyphicon glyphicon-plus'%></td>
         <%end%>
       </tr>
   </tbody>
