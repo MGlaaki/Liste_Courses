@@ -34,7 +34,7 @@
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
-        <td><%=f.text_field :article, :autofocus => true, :autocomplete => false %></td>
+        <td><%=f.text_field :article, :autofocus => true, :autocomplete => "off" %></td>
         <td id="buttonstRow"><%=button_tag "", type: 'submit', class: 'btn-lg btn-success glyphicon glyphicon-plus'%></td>
         <%end%>
       </tr>
