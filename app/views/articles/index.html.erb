@@ -21,7 +21,7 @@
   <thead>
     <tr>
       <th>Article</th>
-      <th id="leftRow"><%= link_to "", 'destroy_all', class: 'btn-lg btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></td>
+      <th id="buttonstRow"><%= link_to "", 'destroy_all', class: 'btn-lg btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></td>
     </tr>
   </thead>
 
@@ -29,13 +29,13 @@
     <% @articles.each do |article| %>
       <tr>
         <td id=<%="article#{article.id}"%> onclick="myFunction(event)"><%= article.article.capitalize%></td>
-        <td id="leftRow"><%= link_to "", article, class: 'btn-lg btn-danger glyphicon glyphicon-minus',method: :delete%></td>
+        <td id="buttonstRow"><%= link_to "", article, class: 'btn-lg btn-danger glyphicon glyphicon-minus',method: :delete%></td>
 
     <% end %>
       <tr>
         <%= form_for @article do |f|%>
         <td><%=f.text_field :article, :autofocus => true %></td>
-        <td id="leftRow"><%=button_tag "", type: 'submit', class: 'btn-lg btn-success glyphicon glyphicon-plus'%></td>
+        <td id="buttonstRow"><%=button_tag "", type: 'submit', class: 'btn-lg btn-success glyphicon glyphicon-plus'%></td>
         <%end%>
       </tr>
   </tbody>
