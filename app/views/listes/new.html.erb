@@ -1,0 +1,22 @@
+<%= form_with(model: @liste, local: true) do |form| %>
+  <% if @liste.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(liste.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% liste.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Nom de la liste"%>
+    <%= form.text_area :nom_liste, id: :liste_nom_liste %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

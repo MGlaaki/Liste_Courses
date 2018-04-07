@@ -1,0 +1,10 @@
+<h1> Les listes apparaitront ici</h1>
+
+<% @listes.each do |l|%>
+  <div>Id Liste : <%=l.id%>
+  <div>Utilisateur : <%=l.utilisateur%></div>
+  <div>Nom Liste : <%=l.nom_liste%></div>
+<%end%>
+
+
+<%= link_to "Nouvelle liste", new_liste_path %>

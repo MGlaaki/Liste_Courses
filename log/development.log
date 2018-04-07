@@ -8203,3 +8203,932 @@ Migrating to CreateListes (20180407083342)
             FROM sqlite_temp_master
             WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
 [0m
+Started GET "/articles" for 127.0.0.1 at 2018-04-07 10:59:37 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 56ms (Views: 46.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 16:28:23 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 279ms (Views: 267.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:34:36 +0200
+Processing by ListesController#index as HTML
+Completed 406 Not Acceptable in 15ms
+
+
+  
+ActionController::UnknownFormat (ListesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:36:20 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  Rendered listes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 159ms (Views: 158.2ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:42:31 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (154.2ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liste' for #<#<Class:0x0055ccf2427f88>:0x0055ccf241c318>
+Did you mean?  @liste):
+    1: <%= form_with(model: liste, local: true) do |form| %>
+    2:   <% if article.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+  
+app/views/listes/new.html.erb:1:in `_app_views_listes_new_html_erb___1580851382540941989_47169363078600'
+Started GET "/articles/new" for 127.0.0.1 at 2018-04-07 16:43:37 +0200
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (14.3ms)
+  Rendered articles/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 65ms (Views: 57.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:44:25 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (158.7ms)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liste' for #<#<Class:0x0055ccf2427f88>:0x007fd3801c0d58>
+Did you mean?  @liste):
+    1: <%= form_with(model: liste, local: true) do |form| %>
+    2:   <% if article.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+  
+app/views/listes/new.html.erb:1:in `_app_views_listes_new_html_erb___1580851382540941989_70273182075880'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:45:31 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (207.6ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x0055ccf2427f88>:0x007fd38cbe2028>
+Did you mean?  article_url):
+    1: <%= form_with(model: @liste, local: true) do |form| %>
+    2:   <% if article.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+    5: 
+  
+app/views/listes/new.html.erb:2:in `block in _app_views_listes_new_html_erb___1580851382540941989_70273288051400'
+app/views/listes/new.html.erb:1:in `_app_views_listes_new_html_erb___1580851382540941989_70273288051400'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:46:00 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (182.6ms)
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liste' for #<#<Class:0x0055ccf2427f88>:0x0055ccf20fee60>
+Did you mean?  @liste):
+    1: <%= form_with(model: liste, local: true) do |form| %>
+    2:   <% if liste.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(liste.errors.count, "error") %> prohibited this article from being saved:</h2>
+  
+app/views/listes/new.html.erb:1:in `_app_views_listes_new_html_erb___1580851382540941989_47169361449360'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:46:18 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (194.3ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `liste' for #<#<Class:0x0055c6ef3e5d08>:0x0055c6ef39d7b0>
+Did you mean?  @liste):
+    1: <%= form_with(model: liste, local: true) do |form| %>
+    2:   <% if liste.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(liste.errors.count, "error") %> prohibited this article from being saved:</h2>
+  
+app/views/listes/new.html.erb:1:in `_app_views_listes_new_html_erb___1813316074549494042_47156452867720'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:46:47 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 331ms (Views: 330.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:46:52 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+GeNhQ0baR40f0hXAZuiV/Gh3GpP4aVtDwXy/w+ccBj6af3lat9DQnFzmaKoY+d/7CG+HutSyX/lqm5SJmxZQ==", "liste"=>{"nom_liste"=>"bonsoir"}, "commit"=>"Create Liste"}
+No template found for ListesController#create, rendering head :no_content
+Completed 204 No Content in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:47:18 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  Rendered listes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:49:17 +0200
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:13: syntax error, unexpected '(', expecting keyword_end
+    @liste(:utlisateur) = "Default"
+           ^
+/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:14: syntax error, unexpected '(', expecting keyword_end
+    @liste(:nom_liste) = params(:nom_liste)
+           ^):
+  
+app/controllers/listes_controller.rb:13: syntax error, unexpected '(', expecting keyword_end
+app/controllers/listes_controller.rb:14: syntax error, unexpected '(', expecting keyword_end
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:49:39 +0200
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:13: syntax error, unexpected '(', expecting keyword_end
+    @liste(:utilisateur) = "Default"
+           ^
+/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:14: syntax error, unexpected '(', expecting keyword_end
+    @liste(:nom_liste) = params(:nom_liste)
+           ^):
+  
+app/controllers/listes_controller.rb:13: syntax error, unexpected '(', expecting keyword_end
+app/controllers/listes_controller.rb:14: syntax error, unexpected '(', expecting keyword_end
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:50:12 +0200
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:13: syntax error, unexpected '(', expecting keyword_end
+    @liste(:utilisateur).set "Default"
+           ^
+/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:14: syntax error, unexpected '(', expecting keyword_end
+    @liste(:nom_liste) = params(:nom_liste)
+           ^):
+  
+app/controllers/listes_controller.rb:13: syntax error, unexpected '(', expecting keyword_end
+app/controllers/listes_controller.rb:14: syntax error, unexpected '(', expecting keyword_end
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:52:25 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  Rendered listes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 38ms (Views: 35.2ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:52:30 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 46ms (Views: 39.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:52:31 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E7s7ekTZTjkxL1dFB7Z0C2eaS3E8+lC37nqf0M5dyeKnswK7xUZekEA7ZALREZUfx+xK+O5onQel0CGievoJRw==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `listes' for #<ListesController:0x007fa930c53380>
+Did you mean?  listes_url
+               listes_path
+               @liste):
+  
+app/controllers/listes_controller.rb:14:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-07 16:52:51 +0200
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 57ms (Views: 48.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:52:55 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  Rendered listes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:52:59 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 60ms (Views: 52.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:53:02 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"obm3L7lEXonVpFl1WMKxGtpLdalC+m2FLLhU7PxNpzgVsY7uONtOIKSwajKOZVAOej10IJBooDVnEuqeSOpnnQ==", "liste"=>{"nom_liste"=>"hioh"}, "commit"=>"Create Liste"}
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:53:02 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  Rendered listes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:54:47 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (6.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 45ms (Views: 38.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:54:48 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:56:08 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:56:12 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:56:14 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4qN0dMWlIWuX7d9dcXREccPOCfyg+izdg3/umcgKvdBWq021RDoxwub57Bqn06VlY7gIdXJo4W3I1VDrfK19dQ==", "liste"=>{"nom_liste"=>"hhoiop"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Test"], ["created_at", "2018-04-07 14:56:14.146302"], ["updated_at", "2018-04-07 14:56:14.146302"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 21ms (ActiveRecord: 17.4ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:56:14 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:56:19 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:56:22 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+rj8mHCk8PxarZMxN+nWLLX2m3frL4c7PAlqEmbxTLpOsMVZ8TvgVSu5oHbhTjc4FYCa/jm9Sot3o9Rg0laMHw==", "liste"=>{"nom_liste"=>"hoho"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Test"], ["created_at", "2018-04-07 14:56:22.108781"], ["updated_at", "2018-04-07 14:56:22.108781"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: listes.utilisateur, listes.nom_liste: INSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+app/controllers/listes_controller.rb:15:in `create'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:57:21 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 58ms (Views: 48.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:57:23 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KM5FW29YXPVgLxjRmv02LiaoL28CKuXJQESJM3ogRGKcxnya7sdMXBE7K5ZMWtc6ht4u5tC4KHkL7jdBzoeExw==", "liste"=>{"nom_liste"=>"vygiug"}, "commit"=>"Create Liste"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/listes_controller.rb:14:in `create'
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:57:37 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:57:40 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:57:42 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mgeJXC1voQx1Qj2xQKMidnPN3crGq0a1O5HnC+v8dTsuD7CdrPCxpQRWDvaWBMNi07vcQxQ5iwVwO1l5X1u1ng==", "liste"=>{"nom_liste"=>"jjopkp"}, "commit"=>"Create Liste"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `nom_liste' for #<ActionController::Parameters:0x007fa9282676a8>):
+  
+app/controllers/listes_controller.rb:14:in `create'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:58:04 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 44ms (Views: 36.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:58:06 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fNFWzqxJn/+TjV2SDxOmimwEvpbAz1FNRtaCGsY8RmLI2W8PLdaPVuKZbtXZtEeezHK/HxJdnP0NfDxocpuGxw==", "liste"=>{"nom_liste"=>"iohiojpok"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["utilisateur", "Default"], ["created_at", "2018-04-07 14:58:06.976900"], ["updated_at", "2018-04-07 14:58:06.976900"]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 18ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:58:07 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 16:58:14 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 16:58:16 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eL7RcE0E0hh4ZsAP2JqIKTJ2wrN1+lYoCAfUELzQTL/MtuixzJvCsQly80gOPWk9kgDDOqdom5hDrWpiCHeMGg==", "liste"=>{"nom_liste"=>"jopjoj"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["utilisateur", "Default"], ["created_at", "2018-04-07 14:58:16.744875"], ["updated_at", "2018-04-07 14:58:16.744875"]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 14ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 16:58:16 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mListe Load (0.9ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20180407150627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20180407150627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alistes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar DEFAULT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_alistes_on_utilisateur_and_nom_liste" ON "alistes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alistes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "listes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20180407150627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alistes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar DEFAULT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_alistes_on_utilisateur_and_nom_liste" ON "alistes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alistes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "listes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "listes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar NOT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_listes_on_utilisateur_and_nom_liste" ON "listes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "listes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "alistes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "alistes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alistes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar NOT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_alistes_on_utilisateur_and_nom_liste" ON "alistes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alistes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "listes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar NOT NULL, "nom_liste" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_listes_on_utilisateur_and_nom_liste" ON "listes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "listes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "alistes"[0m
+  [1m[35m (1.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35mSQL (11.7ms)[0m  [1m[31mDELETE FROM "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNull (20180407150627)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alistes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar DEFAULT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_alistes_on_utilisateur_and_nom_liste" ON "alistes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alistes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "listes"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "listes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "listes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar NOT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_listes_on_utilisateur_and_nom_liste" ON "listes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "listes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "alistes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "alistes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "alistes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar NOT NULL, "nom_liste" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_alistes_on_utilisateur_and_nom_liste" ON "alistes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "alistes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "listes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "listes" ("id" integer NOT NULL PRIMARY KEY, "utilisateur" varchar NOT NULL, "nom_liste" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_alistes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_listes_on_utilisateur_and_nom_liste" ON "listes" ("utilisateur", "nom_liste")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "listes" ("id","utilisateur","nom_liste","created_at","updated_at")
+                     SELECT "id","utilisateur","nom_liste","created_at","updated_at" FROM "alistes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "alistes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180407150627"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:09:23 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 51ms (Views: 43.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:09:27 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:09:30 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 54ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:09:32 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cq+iU/uHzgmjP4QK59Wkdft/JduFYnj1HJkXdrca3OvGp5uSehjeoNIrt00xckVhWwkkUlfwtUVXM6kEA70cTg==", "liste"=>{"nom_liste"=>"buohni"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["utilisateur", "Default"], ["created_at", "2018-04-07 15:09:32.962925"], ["updated_at", "2018-04-07 15:09:32.962925"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: listes.nom_liste: INSERT INTO "listes" ("utilisateur", "created_at", "updated_at") VALUES (?, ?, ?)):
+  
+app/controllers/listes_controller.rb:15:in `create'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:09:52 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 261ms (Views: 249.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:09:54 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bfnuhgyOjedVS5/bRvs5Nf1CbFPh0qGaCcifAsd7SknZ8ddHjRGdTiRfrJyQXNghXTRt2jNAbCpCYiFwc9yK7A==", "liste"=>{"nom_liste"=>"uigiohpj"}, "commit"=>"Create Liste"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["utilisateur", "Default"], ["created_at", "2018-04-07 15:09:54.348447"], ["updated_at", "2018-04-07 15:09:54.348447"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: listes.nom_liste: INSERT INTO "listes" ("utilisateur", "created_at", "updated_at") VALUES (?, ?, ?)):
+  
+app/controllers/listes_controller.rb:15:in `create'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:11:07 +0200
+Processing by ListesController#new as HTML
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:11:17 +0200
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 38.2ms | ActiveRecord: 0.9ms)
+
+
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 53ms (Views: 45.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:11:19 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDBsl97H+A8TkfTDJhPfSZ+JjYgeq2X8dXg4L2qXTGSkOFVWX1jopmKFx4TwtD5dP/+MAcw5qEw+0oZd3jCMwQ==", "liste"=>{"nom_liste"=>"joj"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Test"], ["created_at", "2018-04-07 15:11:19.616390"], ["updated_at", "2018-04-07 15:11:19.616390"]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 17ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:11:19 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:15:06 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 48ms (Views: 45.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:15:08 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:15:10 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YHoMZQUf+Dsg54+yaUIDjq4VH2rHbHN7BDMLbR+Oj0nUcjWkhIDoklHzvPW/5eKaDmMe4xX+vstPmbUfqylP7A==", "liste"=>{"nom_liste"=>"hhiojip"}, "commit"=>"Create Liste"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for nil:NilClass):
+  
+app/controllers/listes_controller.rb:14:in `create'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:16:08 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 49ms (Views: 40.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:16:11 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wY2o8f9nZ2pQuJjQu1/faL9am/gFMNNQ87Ly2VhdUOl1hZEwfvh3wyGsq5dt+D58HyyacdeiHuC4GEyr7PqQTA==", "liste"=>{"nom_liste"=>"oijpjp"}, "commit"=>"Create Liste"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for nil:NilClass):
+  
+app/controllers/listes_controller.rb:14:in `create'
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:18:37 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 46ms (Views: 37.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:18:39 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BwPGh3PnloPpfbBx07UXOLJqsuCEw3325jjf+RVeMXOzC/9G8niGKphpgzYFEvYsEhyzaVZRsEatkmGLofnx1g==", "liste"=>{"nom_liste"=>"jopj,mlp"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "jopj,mlp"], ["created_at", "2018-04-07 15:18:39.396738"], ["updated_at", "2018-04-07 15:18:39.396738"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 19ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:18:39 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:20:20 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:12 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:15 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.4ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 50ms (Views: 47.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:16 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:18 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:21 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:23 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:39 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"listes"}, missing required keys: [:id]):
+     7: <%end%>
+     8: 
+     9: 
+    10: <%= link_to new_"Nouvelle liste", liste_path %>
+  
+app/views/listes/index.html.erb:10:in `_app_views_listes_index_html_erb___110249303601778454_47123037366240'
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:22:56 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"listes"}, missing required keys: [:id]):
+     7: <%end%>
+     8: 
+     9: 
+    10: <%= link_to "Nouvelle liste", liste_path %>
+  
+app/views/listes/index.html.erb:10:in `_app_views_listes_index_html_erb___110249303601778454_70118810465480'
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:23:18 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-07 17:23:20 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 60ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-07 17:23:23 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O8hN5jqrlInPtFA3Xx6lokjaTrhEa8SaaNissxATkZSkZkdZXeUQLn5MuOCFsiHgH2xtNc9ohug1OGAEpyMb+A==", "liste"=>{"nom_liste"=>"nugboiblknopj"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "nugboiblknopj"], ["created_at", "2018-04-07 15:23:23.185004"], ["updated_at", "2018-04-07 15:23:23.185004"]]
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 15ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-07 17:23:23 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-07 17:23:51 +0200
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 50ms (Views: 42.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-07 17:24:02 +0200
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
