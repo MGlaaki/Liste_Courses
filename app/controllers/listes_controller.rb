@@ -16,6 +16,9 @@ class ListesController < ApplicationController
     redirect_to listes_path
   end
 
+  def show
+    redirect_to liste_articles_path 
+  end
 
 
 end

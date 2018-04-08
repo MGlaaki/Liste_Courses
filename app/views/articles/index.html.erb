@@ -29,11 +29,11 @@
     <% @articles.each do |article| %>
       <tr>
         <td id=<%="article#{article.id}"%> onclick="myFunction(event)"><%= article.article.capitalize%></td>
-        <td id="buttonstRow"><%= link_to "", article, class: 'btn-sm btn-danger glyphicon glyphicon-minus',method: :delete%></td>
+        <td id="buttonstRow"><%= link_to "", liste_article_path(id: article.id), class: 'btn-sm btn-danger glyphicon glyphicon-minus',method: :delete%></td>
 
     <% end %>
       <tr>
-        <%= form_for @article do |f|%>
+        <%= form_for liste_articles_path do |f|%>
         <td><%=f.text_field :article, :autofocus => true, :autocomplete => "off" %></td>
         <td id="buttonstRow"><%=button_tag "", type: 'submit', class: 'btn-sm btn-success glyphicon glyphicon-plus'%></td>
         <%end%>

@@ -4,8 +4,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
-    @article = Article.new
+    liste = Liste.find(params[:liste_id])
+    @articles = liste.article.all
+    @article = liste.article.create
   end
 
   # GET /articles/1
@@ -25,14 +26,17 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    liste = Liste.find(params[:liste_id])
+    @article = liste.article.create
+    @article.article = params[liste_articles_path][:article]
+
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to articles_url, notice: 'Element ajouté.' }
+        format.html { redirect_to liste_articles_url, notice: 'Element ajouté.' }
         format.json { render :show, status: :created, location: @article }
       else
-        format.html { redirect_to articles_url, alert: 'Impossible d\'ajouter un élément vide'}
+        format.html { redirect_to liste_articles_url, alert: 'Impossible d\'ajouter un élément vide'}
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
@@ -55,9 +59,11 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    @article.destroy
+    liste = Liste.find(params[:liste_id])
+    @article = liste.article.find(params[:id])
+    @article.delete
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Element supprimé' }
+      format.html { redirect_to liste_articles_url, notice: 'Element supprimé' }
       format.json { head :no_content }
     end
   end
