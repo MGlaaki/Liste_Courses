@@ -17,7 +17,7 @@ class ListesController < ApplicationController
   end
 
   def show
-    redirect_to liste_articles_path 
+    redirect_to controller: 'articles', liste_id: params[:id]
   end
 
 

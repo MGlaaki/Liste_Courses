@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    liste = Liste.find(params[:liste_id])
-    @articles = liste.article.all
-    @article = liste.article.create
+    @liste = Liste.find(params[:liste_id])
+    @articles = @liste.article.all
+    @article = Article.new(:liste => @liste)
   end
 
   # GET /articles/1
@@ -26,9 +26,9 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    liste = Liste.find(params[:liste_id])
-    @article = liste.article.create
-    @article.article = params[liste_articles_path][:article]
+    @liste = Liste.find(params[:liste_id])
+    @article = @liste.article.build
+    @article.article = params[:article][:article]
 
 
     respond_to do |format|
