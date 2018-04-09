@@ -11,13 +11,18 @@ class ListesController < ApplicationController
   def create
     @liste = Liste.new
     @liste.utilisateur = 'Default'
-    @liste.nom_liste = params[:liste][:nom_liste]
+    @liste.nom_liste = params[:liste][:nom_liste].capitalize
     @liste.save
     redirect_to liste_articles_path(liste_id: @liste.id)
   end
 
   def show
     redirect_to controller: 'articles', liste_id: params[:id]
+  end
+
+  def root
+    root_id = Liste.first[:id]
+    redirect_to controller: 'articles', liste_id: root_id
   end
 
   def destroy

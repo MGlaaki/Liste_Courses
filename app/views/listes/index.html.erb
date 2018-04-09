@@ -1,11 +1,19 @@
 <h1> Listes :</h1>
 
-<% @listes.each do |l|%>
-  <div>
-    <%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
-    Nom Liste : <%=link_to l.nom_liste, liste_path(id: l.id)%>
-  </div>
-<%end%>
+<%if @listes.size <= 1 %>
+  <% @listes.each do |l|%>
+    <div>
+      <%=link_to l.nom_liste, liste_path(id: l.id)%>
+    </div>
+  <%end%>
+<% else %>
 
+  <% @listes.each do |l|%>
+    <div>
+      <%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
+      <%=link_to l.nom_liste, liste_path(id: l.id)%>
+    </div>
+  <%end%>
+<%end%>
 </br>
 <p> <%= link_to "Nouvelle liste", new_liste_path %> </p>
