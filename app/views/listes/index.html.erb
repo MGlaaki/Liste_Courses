@@ -1,11 +1,11 @@
-<h1> Les listes apparaitront ici</h1>
+<h1> Listes :</h1>
 
 <% @listes.each do |l|%>
-  <div>Id Liste : <%=l.id%>
-  <div>Utilisateur : <%=l.utilisateur%></div>
-  <div>Nom Liste : <%=link_to l.nom_liste, liste_path(id: l.id)%></div>
-  <div></div>
+  <div>
+    <%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
+    Nom Liste : <%=link_to l.nom_liste, liste_path(id: l.id)%>
+  </div>
 <%end%>
 
-
-<%= link_to "Nouvelle liste", new_liste_path %>
+</br>
+<p> <%= link_to "Nouvelle liste", new_liste_path %> </p>

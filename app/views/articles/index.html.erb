@@ -15,7 +15,16 @@
 
 <div id="main-container" class="responsive-table">
 
-<h1><%= @liste.nom_liste %></h1>
+
+
+
+<ul class="nav nav-tabs">
+  <% @listes.each do |l| %>
+    <li <%= l.id == @liste.id ? 'class=active' : ''%> ><%= link_to l.nom_liste, liste_articles_path(l.id) %></li>
+  <%end%>
+  <li><%= link_to "", new_liste_path, class: 'btn-sm glyphicon glyphicon-plus'%></li>
+
+</ul>
 
 <table width=100% class="table-hover table">
   <thead>
@@ -56,6 +65,8 @@
 
 <p id=notice><%=notice%></p>
 <p id=alert><%=alert%></p>
+
+<div><%= link_to "Editer les listes", listes_path %></div>
 
   <%# button_tag "", action:"/articles/#{article[:id]}", class: 'btn-sm btn-danger glyphicon glyphicon-minus', method: :delete%>
   <%#link_to (‘<i class=“fa fa-thumbs-up fa-lg”> </i>’).html_safe, vote_path(@image), :method=> :delete, :remote=> true%>

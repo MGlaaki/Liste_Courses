@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @liste = Liste.find(params[:liste_id])
+    @listes = Liste.all
     @articles = @liste.article.all
     @article = Article.new(:liste => @liste)
   end
@@ -69,10 +70,11 @@ class ArticlesController < ApplicationController
   end
 
   def destroy_all
-    @articles = Article.all
+    @liste = Liste.find(params[:liste_id])
+    @articles = @liste.article.all
     @articles.delete_all
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Reset liste effectué'}
+      format.html { redirect_to liste_articles_url, notice: 'Reset liste effectué'}
     end
   end
 
