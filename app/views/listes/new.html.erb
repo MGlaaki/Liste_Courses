@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label "Nom de la liste"%>
-    <%= form.text_area :nom_liste, id: :liste_nom_liste %>
+    <%= form.text_field :nom_liste, id: :liste_nom_liste, :autofocus => true, :autocomplete => "off" %>
   </div>
 
   <div class="actions">

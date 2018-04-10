@@ -20070,3 +20070,676 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 47ms (Views: 36.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-10 19:34:18 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/4/articles
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:34:19 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 305ms (Views: 272.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:34:22 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 70ms (Views: 68.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:34:23 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:34:29 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oGCaJ454sUEuiSwg6bTmhLboxkUVTfREqbMbuUuCyXpTtgQ5uzlrErZYj+t4jSXDaUIqEIYJ9a+6UyFZKoTefQ==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", ""], ["created_at", "2018-04-10 17:34:29.570464"], ["updated_at", "2018-04-10 17:34:29.570464"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/5/articles
+Completed 302 Found in 9ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:34:29 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:34:32 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:34:35 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 67ms (Views: 63.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/listes/5" for 127.0.0.1 at 2018-04-10 19:34:37 +0200
+Processing by ListesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yketQ7f+YQkj5zupq2WQSftyqAefn3p4iIt9kwisoBhKXYcWUeXs62a1/bnKCWptKWi7Sm2JQmFH63wuKm+ZiQ==", "id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "listes" WHERE "listes"."id" = ?[0m  [["id", 5]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 19ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:34:37 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:35:22 +0200
+Processing by ListesController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+
+  
+ArgumentError (Unknown validator: 'ListeValidator'):
+  
+app/models/liste.rb:2:in `<class:Liste>'
+app/models/liste.rb:1:in `<top (required)>'
+app/controllers/listes_controller.rb:4:in `index'
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:35:42 +0200
+Processing by ListesController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (Unknown validator: 'ListeValidator'):
+  
+app/models/liste.rb:2:in `<class:Liste>'
+app/models/liste.rb:1:in `<top (required)>'
+app/controllers/listes_controller.rb:4:in `index'
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:36:05 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:36:07 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:36:08 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nBO9eOFTdNSaf947dERwiZ+uc2/iADpitTehGfBURwFvxSNm1BKuhwKuffDlfbPOQASfOnFEO4mm15v5kVJQBg==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"index", :controller=>"articles", :liste_id=>nil}, possible unmatched constraints: [:liste_id]):
+  
+app/controllers/listes_controller.rb:16:in `create'
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:37:42 +0200
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/controllers/listes_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/listes_controller.rb:38: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:37:49 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 51ms (Views: 46.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:37:51 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:37:52 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gDkAQJ9xJQp0TJa341Q7H5puiKnKJKhWziPzneHUZyRz755eqjD/WeydNXxybfhYRcRk/Flgqb3dw8l9gNJwIw==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.1ms)
+
+
+  
+NameError (undefined local variable or method `new_liste_article' for #<ListesController:0x005622dd19f720>
+Did you mean?  new_liste_article_url
+               new_liste_article_path
+               new_liste_url):
+  
+app/controllers/listes_controller.rb:18:in `create'
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:38:05 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gDkAQJ9xJQp0TJa341Q7H5puiKnKJKhWziPzneHUZyRz755eqjD/WeydNXxybfhYRcRk/Flgqb3dw8l9gNJwIw==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"new", :controller=>"articles"}, missing required keys: [:liste_id]):
+  
+app/controllers/listes_controller.rb:18:in `create'
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:38:55 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gDkAQJ9xJQp0TJa341Q7H5puiKnKJKhWziPzneHUZyRz755eqjD/WeydNXxybfhYRcRk/Flgqb3dw8l9gNJwIw==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/listes/new
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:38:55 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:38:55 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JxIOJpB+wjnXRPwRwK+tHyjjujJh2/EtPu9OSLuYT4CnCCRzdmVP25IWOgGhw1c7+vmpf5PNyTTxj0/1mVt2EQ==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/listes/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:38:55 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:38:56 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DzP9ylzbPT7ExKqlT0KzPnDxo+QqTda/DySMfIsCXXGPKdefusCw3IGWbLUuLkkaouuwqdhb7qbARI3BqcFk4A==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/listes/new
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:38:56 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:39:00 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"khVKncf1haAkoQHgW3XpfxzjRDS9mDAWPZxu+lhKuyASD2DIIe4IQmHzx/A6GRNbzvlXeU+OCA/y/G9HeomCsQ==", "liste"=>{"nom_liste"=>"Test"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Test"], ["created_at", "2018-04-10 17:39:00.338207"], ["updated_at", "2018-04-10 17:39:00.338207"]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/5/articles
+Completed 302 Found in 15ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:39:00 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.4ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 58ms (Views: 42.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:39:10 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:40:34 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:40:38 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X13d7hZIVBYvCHJwMYCQmPo04KFKBwHRAArlnNp6vGisi0PwIwmORbfZ0buguVPfJZ4M9NlDADoT6t98u3yrbw==", "liste"=>{"nom_liste"=>"truc"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Truc"], ["created_at", "2018-04-10 17:40:38.238132"], ["updated_at", "2018-04-10 17:40:38.238132"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/6/articles
+Completed 302 Found in 14ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/listes/6/articles" for 127.0.0.1 at 2018-04-10 19:40:38 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"6"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 6]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:40:40 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:40:42 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:40:44 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"abCJOLBfjwAI15zgFaV4yS57l08+pnXEAwbpt1L/1Y+aZhcmhR5VU5AGPyuEnLuO8dF7Gq3idC8Q5tNXM/nCiA==", "liste"=>{"nom_liste"=>"truc"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Truc"], ["created_at", "2018-04-10 17:40:44.069354"], ["updated_at", "2018-04-10 17:40:44.069354"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: listes.utilisateur, listes.nom_liste: INSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+app/controllers/listes_controller.rb:15:in `create'
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:41:02 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"abCJOLBfjwAI15zgFaV4yS57l08+pnXEAwbpt1L/1Y+aZhcmhR5VU5AGPyuEnLuO8dF7Gq3idC8Q5tNXM/nCiA==", "liste"=>{"nom_liste"=>"machin"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Machin"], ["created_at", "2018-04-10 17:41:02.622683"], ["updated_at", "2018-04-10 17:41:02.622683"]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: listes.utilisateur, listes.nom_liste: INSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)):
+  
+app/controllers/listes_controller.rb:15:in `create'
+Started POST "/listes" for 127.0.0.1 at 2018-04-10 19:41:13 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"abCJOLBfjwAI15zgFaV4yS57l08+pnXEAwbpt1L/1Y+aZhcmhR5VU5AGPyuEnLuO8dF7Gq3idC8Q5tNXM/nCiA==", "liste"=>{"nom_liste"=>"autre machin"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "listes" ("utilisateur", "nom_liste", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["utilisateur", "Default"], ["nom_liste", "Autre machin"], ["created_at", "2018-04-10 17:41:13.771532"], ["updated_at", "2018-04-10 17:41:13.771532"]]
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/7/articles
+Completed 302 Found in 21ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/listes/7/articles" for 127.0.0.1 at 2018-04-10 19:41:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"7"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 7]]
+  Rendered articles/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-10 19:41:17 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 51ms (Views: 50.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/7" for 127.0.0.1 at 2018-04-10 19:41:23 +0200
+Processing by ListesController#show as HTML
+  Parameters: {"id"=>"7"}
+Redirected to http://localhost:3000/listes/7/articles
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/listes/7/articles" for 127.0.0.1 at 2018-04-10 19:41:23 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"7"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 7]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:24 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:41:26 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 89ms (Views: 83.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/listes/6/articles" for 127.0.0.1 at 2018-04-10 19:41:26 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"6"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 6]]
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 44ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:27 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:32 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ysuYwZEf2OTn8Kl5MywQTPAMoyUU1dmyBsfQp8SEk5JopdsOm0srhxUwPsetuFKFnD08Zf7ZB+XBbyGgOS/yVA==", "article"=>{"article"=>"peches"}, "button"=>"", "liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "peches"], ["created_at", "2018-04-10 17:41:32.824824"], ["updated_at", "2018-04-10 17:41:32.824824"], ["liste_id", 4]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/4/articles
+Completed 302 Found in 13ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:32 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:36 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E8gNsEQAy2jmXr0DFNHBC2i4/0uKvZXNrwjnL0CUvemT0iflohtGiqMMexN1vTsvuqLsBnirrdRgaOaSYleEeA==", "article"=>{"article"=>"abricots"}, "button"=>"", "liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "abricots"], ["created_at", "2018-04-10 17:41:36.005924"], ["updated_at", "2018-04-10 17:41:36.005924"], ["liste_id", 4]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/4/articles
+Completed 302 Found in 16ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:36 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 56ms (Views: 53.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:37 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JhtsOvP+cgbZqOD9g74cXUiW8gRpqzNMBO9Khbh6gYGmAUZvFeX/5Jz6Ju3i0uZ5mozhSZu9C1XLj0s4mrm4EA==", "article"=>{"article"=>"poires"}, "button"=>"", "liste_id"=>"4"}
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "poires"], ["created_at", "2018-04-10 17:41:37.964924"], ["updated_at", "2018-04-10 17:41:37.964924"], ["liste_id", 4]]
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/4/articles
+Completed 302 Found in 25ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:37 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:40 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"diCjTLenKXgzZXJWW+0K7rGP41dClCRz4aG4X1ytdir2OokZUbykmnY3tEY6gfDKY5XwGrCCHGouwbnifm5Puw==", "article"=>{"article"=>"chocolat"}, "button"=>"", "liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "chocolat"], ["created_at", "2018-04-10 17:41:40.444754"], ["updated_at", "2018-04-10 17:41:40.444754"], ["liste_id", 4]]
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/4/articles
+Completed 302 Found in 17ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:40 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:41:42 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/6/articles" for 127.0.0.1 at 2018-04-10 19:41:43 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"6"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 6]]
+  Rendered articles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/7/articles" for 127.0.0.1 at 2018-04-10 19:41:43 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"7"}
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 7]]
+  Rendered articles/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 57ms (Views: 49.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:44 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:41:50 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/6/articles" for 127.0.0.1 at 2018-04-10 19:41:50 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"6"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 6]]
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/7/articles" for 127.0.0.1 at 2018-04-10 19:41:51 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"7"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 7]]
+  Rendered articles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:41:53 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:42:00 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/6/articles" for 127.0.0.1 at 2018-04-10 19:42:01 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"6"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 6]]
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 48ms (Views: 44.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/7/articles" for 127.0.0.1 at 2018-04-10 19:42:02 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"7"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 7]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/4/articles" for 127.0.0.1 at 2018-04-10 19:42:02 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"4"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 4]]
+  Rendered articles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/5/articles" for 127.0.0.1 at 2018-04-10 19:42:03 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"5"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 5]]
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-10 19:42:04 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+

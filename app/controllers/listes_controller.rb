@@ -12,8 +12,11 @@ class ListesController < ApplicationController
     @liste = Liste.new
     @liste.utilisateur = 'Default'
     @liste.nom_liste = params[:liste][:nom_liste].capitalize
-    @liste.save
-    redirect_to liste_articles_path(liste_id: @liste.id)
+    if @liste.save
+      redirect_to liste_articles_path(liste_id: @liste.id)
+    else
+      redirect_to new_liste_path
+    end
   end
 
   def show
