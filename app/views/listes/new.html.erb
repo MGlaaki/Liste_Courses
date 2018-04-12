@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "Nom de la liste"%>
+    <%= form.label "Nouvelle liste :"%>
     <%= form.text_field :nom_liste, id: :liste_nom_liste, :autofocus => true, :autocomplete => "off" %>
   </div>
 
@@ -20,3 +20,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<p id=alert><%=alert%></p>

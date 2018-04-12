@@ -15,7 +15,15 @@ class ListesController < ApplicationController
     if @liste.save
       redirect_to liste_articles_path(liste_id: @liste.id)
     else
-      redirect_to new_liste_path
+      if @liste.errors["nom_liste"][0].include? 'is too long'
+        error = "Trop long nom !"
+      elsif @liste.errors["nom_liste"][0].include? 'can\'t be blank'
+        error = "Le nom de liste ne peut pas être vide"
+      elsif @liste.errors["nom_liste"][0].include? 'has already been taken'
+        error = "Le nom de liste doit être unique"
+      end
+
+      redirect_to new_liste_path, alert: error
     end
   end
 
