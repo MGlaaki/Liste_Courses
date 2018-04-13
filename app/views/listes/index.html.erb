@@ -1,21 +1,27 @@
-<h1> Listes :</h1>
 
-<%if @listes.size == 0 %>
-    <div>
-      Vous n'avez aucune liste.
-    </div>
 
-<% else %>
+<div id="main-container" class="responsive-table">
 
-  <% @listes.each do |l|%>
-    <div>
-      <%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
-      <%=link_to l.nom_liste, liste_path(id: l.id)%>
-    </div>
+  <h1> Listes :</h1>
+
+  <%if @listes.size == 0 %>
+      <div>
+        Vous n'avez aucune liste.
+      </div>
+
+  <% else %>
+
+    <% @listes.each do |l|%>
+      <div>
+        <%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
+        <%=link_to l.nom_liste, liste_path(id: l.id)%>
+      </div>
+    <%end%>
   <%end%>
-<%end%>
-</br>
 
 
-<p> <%= link_to "Nouvelle liste", new_liste_path %> </p>
-<p> <%= link_to "Retour aux listes", root_path %></p>
+
+  <p> <%= link_to "Nouvelle liste", new_liste_path %> </p>
+  <p> <%= link_to "Retour aux listes", root_path %></p>
+
+</div>
