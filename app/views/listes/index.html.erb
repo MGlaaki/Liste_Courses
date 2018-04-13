@@ -11,17 +11,21 @@
 
   <% else %>
 
+  <table width=100% class="table-hover table">
+    <thead>
     <% @listes.each do |l|%>
-      <div>
-        <%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
-        <%=link_to l.nom_liste, liste_path(id: l.id)%>
-      </div>
+      <tr>
+        <td><%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
+        <%=link_to l.nom_liste, liste_path(id: l.id)%></td>
+      </tr>
     <%end%>
   <%end%>
+</thead>
+</table>
 
 
 
-  <p> <%= link_to "Nouvelle liste", new_liste_path %> </p>
-  <p> <%= link_to "Retour aux listes", root_path %></p>
+  <div> <%= link_to "Nouvelle liste", new_liste_path %> </div>
+  <div> <%= link_to "Retour aux listes", root_path %></div>
 
 </div>
