@@ -1,11 +1,10 @@
 <h1> Listes :</h1>
 
-<%if @listes.size <= 1 %>
-  <% @listes.each do |l|%>
+<%if @listes.size == 0 %>
     <div>
-      <%=link_to l.nom_liste, liste_path(id: l.id)%>
+      Vous n'avez aucune liste.
     </div>
-  <%end%>
+
 <% else %>
 
   <% @listes.each do |l|%>
@@ -16,4 +15,7 @@
   <%end%>
 <%end%>
 </br>
+
+
 <p> <%= link_to "Nouvelle liste", new_liste_path %> </p>
+<p> <%= link_to "Retour aux listes", root_path %></p>
