@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :name, :presence => true
   validates_length_of :password, :minimum => 6
-
+  validates_uniqueness_of :name, :case_sensitive => false
   validates_confirmation_of :password
   before_save :encrypt_password
 
@@ -12,7 +12,13 @@ class User < ApplicationRecord
     self.password_hash = BCrypt::Engine.hash_secret(password,salt)
   end
 
-  def self.authenticate(email,password)
+  def self.authenticate(name,password)
+    user = User.where(name: name).first
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.salt)
+      user
+    else
+      nil
+    end
   end
 
 end

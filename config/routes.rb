@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   root 'listes#root'
 
+  get "/log-in" => "sessions#new"
+  post "/log-in" => "sessions#create"
+  get "/log-out" => "sessions#destroy", as: :log_out
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

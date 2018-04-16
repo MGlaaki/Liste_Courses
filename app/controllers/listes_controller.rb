@@ -32,8 +32,12 @@ class ListesController < ApplicationController
   end
 
   def root
-    root_id = Liste.first[:id]
-    redirect_to controller: 'articles', liste_id: root_id
+    if session[:user_id] != nil
+      root_id = Liste.first[:id]
+      redirect_to controller: 'articles', liste_id: root_id
+    else
+      redirect_to log_in_path
+    end
   end
 
   def destroy
