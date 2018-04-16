@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     delete 'destroy_all', to: 'articles#destroy_all'
   end
 
+  resources :users
+
   root 'listes#root'
 
 

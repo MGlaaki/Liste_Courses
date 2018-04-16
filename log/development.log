@@ -23208,3 +23208,663 @@ Processing by ListesController#index as HTML
 Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180413203440)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password_hash" varchar, "salt" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180413203440"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_articles_on_liste_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_articles_on_liste_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_listes_on_utilisateur_and_nom_liste' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-04-15 19:37:33 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 22ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-15 19:37:33 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 367ms (Views: 333.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-15 19:37:36 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-15 19:37:37 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/listes/2" for 127.0.0.1 at 2018-04-15 19:37:39 +0200
+Processing by ListesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EEbzs0oYvLNZX7G//jajer4YnLZ+UwBhumoiW5ZLASfwWKPt2i+nF93OezW5MW41GzdcI/njJHiBcA4L3aF9Jg==", "id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "listes" WHERE "listes"."id" = ?[0m  [["id", 2]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 10ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-15 19:37:39 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes"[0m
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  Rendered listes/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-15 19:37:42 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-15 19:37:45 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4o62vdm1h0s3ax8jpTzlweXMONr2Tu5AMs4pO17hseY/ZfRNRTjw5imhO1PjWZcvO677CmfgeXGA0vGGMjOlMQ==", "liste"=>{"nom_liste"=>""}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListe Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "listes" WHERE "listes"."nom_liste" = ? AND "listes"."nom_liste" = ? AND "listes"."utilisateur" = ? LIMIT ?[0m  [["nom_liste", ""], ["nom_liste", ""], ["utilisateur", "Default"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/listes/new
+Completed 302 Found in 12ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-15 19:37:45 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-15 19:37:48 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-15 19:37:48 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.4ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 65ms (Views: 57.4ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_hash", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "francis"], ["password_hash", "$2a$10$zVIyJ.2mBQrpm0ZoYTAOz.a43DQYPrI1dZqL.kUo9AZGcIEV3qInu"], ["salt", "$2a$10$zVIyJ.2mBQrpm0ZoYTAOz."], ["created_at", "2018-04-15 18:28:16.047163"], ["updated_at", "2018-04-15 18:28:16.047163"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:34:50 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 22ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:34:50 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 287ms (Views: 253.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:36:22 +0200
+Processing by UsersController#new as HTML
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UsersController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user/new" for 127.0.0.1 at 2018-04-16 07:36:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user/new" for 127.0.0.1 at 2018-04-16 07:37:32 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:37:36 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 33.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:40:38 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/users/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/home/cthaat/rails-workspace/Liste_Courses/app/views/users/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/users/new.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/users/new.html.erb:19: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:40:58 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:41:31 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2j6143CD76T60qim0XqbM97agM+jxC3egeHRgEWemXShI8egHexnggKUcBZo44S3fkJMtfbJABzJD9MjTNU87A==", "user"=>{"name"=>"test", "password"=>"[FILTERED]", "confirm_passsword"=>"bonsoir"}, "commit"=>"Sign Up"}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:49:16 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 27ms
+
+
+  
+ActionView::Template::Error (undefined method `validate_confirmation_of' for User (call 'User.connection' to establish a connection):Class
+Did you mean?  validates_confirmation_of):
+    1: <h1> Sign up</h1>
+    2: 
+    3: <%= form_for User.new do |f| %>
+    4:   <%= f.label :name %>
+    5:   <%= f.text_field :name %>
+    6: 
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__3619559629620467330_70018658669960'
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:49:30 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 49ms (Views: 48.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:49:46 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0OJZqiNvRmDmwxnpU445dcNgvBVl+7RlNNa7qwu7OSar/yvpTgDORh6FwVnqFybxY/hwbzD2mad8OLkIAvCcvg==", "user"=>{"name"=>"test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user_parms' for #<UsersController:0x007f5cf93c6380>
+Did you mean?  user_params
+               user_path):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:50:12 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0OJZqiNvRmDmwxnpU445dcNgvBVl+7RlNNa7qwu7OSar/yvpTgDORh6FwVnqFybxY/hwbzD2mad8OLkIAvCcvg==", "user"=>{"name"=>"test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("password_hash", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["password_hash", "$2a$10$KIgh.ZE2ndnyuveWrwu9Yus5Qo7HmcsSn668THs1wGn.ZLjR408YO"], ["salt", "$2a$10$KIgh.ZE2ndnyuveWrwu9Yu"], ["created_at", "2018-04-16 05:50:12.472932"], ["updated_at", "2018-04-16 05:50:12.472932"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:50:12 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:50:12 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 72ms (Views: 59.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2018-04-16 07:50:22 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:50:26 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:50:39 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k9f1wrkJmmHuJGqFQp9rRg8K4xbrk25JjXZX8bPsGf/oyoeB1GYSRxZisjX7BnTCr5IvbL6eQ4vFmFVSuqe8Zw==", "user"=>{"name"=>"test2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `rediract_to' for #<UsersController:0x007f5cfa2f63a0>
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:50:54 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k9f1wrkJmmHuJGqFQp9rRg8K4xbrk25JjXZX8bPsGf/oyoeB1GYSRxZisjX7BnTCr5IvbL6eQ4vFmFVSuqe8Zw==", "user"=>{"name"=>"test2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameter: :name
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `back_url' for #<UsersController:0x007f5cec2c6870>):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:52:46 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:52:46 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 71ms (Views: 56.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:52:48 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:52:54 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rmtgSuqgbpdd1xl+q1Q1mSkw+6XmRjTy7faKOtSL4tMYqFgXcpNToadSwr8dHk309VtPIopGyxom0GoPhhvg9g==", "user"=>{"name"=>"ffdgv", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+Unpermitted parameter: :name
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `back_url' for #<UsersController:0x007f5ce41a0de0>):
+  
+app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:58:39 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:58:39 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 45ms (Views: 35.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:58:44 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:58:47 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KqqiYz4pyYGwqh6J83W5mfCA4mUomWSaCPtaH8PIt7KcaZo+phr0t0ovxUhFP8H0LOtW4kSZm3LD3boqkVi1lw==", "user"=>{"name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `nom' for #<User:0x007f5cf48e3278>):
+  
+app/controllers/users_controller.rb:8:in `create'
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:59:29 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:59:29 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 37.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:59:31 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:59:32 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BhsjA3poPWHBje7LUKpNAs7CW0OyXWH31WBktfFm4ryw2Bte4lsAVzsINQrm4DVvEqnvxN5dnh8eRoSAo/bgmQ==", "user"=>{"name"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:59:32 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:59:32 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:59:34 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:59:40 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zc2N/9qpvAwqzMpDf+miLjEexep05farlfK4bhICm0h7DrWiQpqBOtBJEYLJo9pD7XVxbRjlCUNe1FhbQJKZbQ==", "user"=>{"name"=>"test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:59:40 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:59:40 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-16 07:59:43 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-16 07:59:56 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BznSd7gXwlLeGGodQrRniNtzkLwOc8r9/Dqf1XFqp+ux+uoqICT/ZCSdsdz0/h/lBxgkO2JzNRU3HH/gI/qlzg==", "user"=>{"name"=>"avecusername", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_hash", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "avecusername"], ["password_hash", "$2a$10$K5vaGVshT.lUlpPhAbQxJOqga5kY6gYaoXGp0z8QF9TdPs3uVfQua"], ["salt", "$2a$10$K5vaGVshT.lUlpPhAbQxJO"], ["created_at", "2018-04-16 05:59:56.303564"], ["updated_at", "2018-04-16 05:59:56.303564"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 73ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 07:59:56 +0200
+Processing by ListesController#root as HTML
+  [1m[36mListe Load (0.6ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes/1/articles
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/1/articles" for 127.0.0.1 at 2018-04-16 07:59:56 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"1"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes"[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 1]]
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]

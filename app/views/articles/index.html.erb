@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
 
 <script>function myFunction(event)
   {
@@ -14,8 +14,6 @@
 
 
 <div id="main-container" class="responsive-table">
-
-
 
 
 <ul class="nav nav-tabs">
@@ -67,6 +65,7 @@
 <p id=alert><%=alert%></p>
 
 <div><%= link_to "Editer les listes", listes_path %></div>
+<div><%= link_to "Sign Up", new_user_path %></div> 
 
   <%# button_tag "", action:"/articles/#{article[:id]}", class: 'btn-sm btn-danger glyphicon glyphicon-minus', method: :delete%>
   <%#link_to (‘<i class=“fa fa-thumbs-up fa-lg”> </i>’).html_safe, vote_path(@image), :method=> :delete, :remote=> true%>
