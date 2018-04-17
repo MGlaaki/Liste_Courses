@@ -1,16 +1,32 @@
-<h1> S'inscrire</h1>
 
-<%= form_for User.new do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<div class="container-fluid">
+  <h1 class="col-sm-offset-2"> S'inscrire</h1>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= form_for User.new, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, :class =>"form-control" %>
+    </div>
+  </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+<div class="form-group">
+    <%= f.label :password, :class => "control-label col-sm-2" %>
+        <div class="col-sm-10">
+    <%= f.password_field :password, :class => "form-control"  %>
+        </div>
+    </div>
 
-  <%= f.submit "Sign Up" %>
+<div class="form-group">
+    <%= f.label :password_confirmation, :class => "control-label col-sm-2" %>
+        <div class="col-sm-10">
+    <%= f.password_field :password_confirmation, :class =>"form-control"  %>
+        </div>
+    </div>
 
-  <p id=alert><%=alert%></p>
-<% end %>
+    <%= f.submit "Sign Up", :class =>"btn btn-default, col-sm-offset-2" %>
+
+    <p id=alert><%=alert%></p>
+    <div class="col-sm-offset-2"><%= link_to "J'ai déjà un compte.", log_in_path %></div>
+  <% end %>
+</div>

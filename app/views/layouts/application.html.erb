@@ -12,10 +12,13 @@
   </head>
 
   <body>
-    <% if session[:user_id]%>
-    <div><%= "Connecté : #{session[:user_name]}"%>
-    <%= link_to "Se déconnecter", log_out_path %></div>
-    <% end %>
+    <div class="jumbotron">
+      <h1 class="col-sm-offset-2"> Lite Courses</h1>
+      <% if session[:user_id]%>
+      <div class="col-sm-offset-2"><%= "Connecté : #{session[:user_name].capitalize}"%>
+      <%= link_to "Se déconnecter", log_out_path %></div>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>
