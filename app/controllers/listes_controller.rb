@@ -1,7 +1,7 @@
 class ListesController < ApplicationController
 
   def index
-    @listes = Liste.all
+    @listes = Liste.where(user_id: session[:user_id])
   end
 
   def new
@@ -10,7 +10,7 @@ class ListesController < ApplicationController
 
   def create
     @liste = Liste.new
-    @liste.utilisateur = 'Default'
+    @liste.user_id = session[:user_id]
     @liste.nom_liste = params[:liste][:nom_liste].capitalize
     if @liste.save
       redirect_to liste_articles_path(liste_id: @liste.id)
@@ -32,12 +32,18 @@ class ListesController < ApplicationController
   end
 
   def root
-    if session[:user_id] != nil
-      root_id = Liste.first[:id]
-      redirect_to controller: 'articles', liste_id: root_id
-    else
+    if !session[:user_id]
       redirect_to log_in_path
-    end
+
+    else
+      @listes = Liste.where(user_id: session[:user_id])
+      if @listes.size > 0
+        root_id = @listes[0].id
+        redirect_to controller: 'articles', liste_id: root_id
+      else
+        redirect_to listes_path
+      end
+  end
   end
 
   def destroy
