@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id], session[:user_name] = @user.id,@user.name
       redirect_to '/', notice: "Bienvenue sur le site !"
     else
       redirect_to new_user_path, alert: "Un problème a empêché la création de votre compte."

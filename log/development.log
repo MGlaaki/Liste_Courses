@@ -27982,3 +27982,937 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/listes" for 127.0.0.1 at 2018-04-17 21:35:30 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered listes/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 316ms (Views: 304.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/log-out" for 127.0.0.1 at 2018-04-17 21:35:34 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 21:35:34 +0200
+Processing by ListesController#root as HTML
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-17 21:35:34 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 68ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-17 21:35:36 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-17 21:35:51 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-17 21:36:27 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-04-17 21:36:39 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ev7kd0Fc0pModjvf9y+xXTdyDQ7SLnGzb1f9izKjsMnr4UezceVNf2f7aT6NtF/FJOFfw9pwt/6QUMQUVnjTTg==", "name"=>"francis", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "francis"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 65ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-17 21:36:39 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-04-17 21:36:45 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S27qz9s+xDIgYJlPK/5Yyru1IC/DGWtWE1WDw68Y8+m2cM8LwSJKC1WsBPF3z7ZzdK8Ki6EbxxgilVNqqyMTOg==", "name"=>"francis", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "francis"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 21:36:46 +0200
+Processing by ListesController#root as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-17 21:36:46 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 56ms (Views: 37.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:36:48 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[36mListe Load (0.4ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 43.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:36:55 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cAplGW/Q6x9Cl2JOnQKcoJwqtlTwm5NH5zSPkKsk0ks69KQnHykfi4TswBWlCtOhjckZLkAD/Ife+RFG1CeSQA==", "article"=>{"article"=>"dsvfvf"}, "button"=>"", "liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "dsvfvf"], ["created_at", "2018-04-17 19:36:55.872826"], ["updated_at", "2018-04-17 19:36:55.872826"], ["liste_id", 3]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/3/articles
+Completed 302 Found in 16ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:36:55 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:37:00 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fgO05fIn1sGzMKeHc3Trqy7BuUMVITVvQps/JCFKajCDHZEh6DtY+Mb8OjkvRQUS4duT53cjmSFzW++NJXGK4w==", "article"=>{"article"=>"vuhuhvi"}, "button"=>"", "liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "vuhuhvi"], ["created_at", "2018-04-17 19:37:00.702854"], ["updated_at", "2018-04-17 19:37:00.702854"], ["liste_id", 3]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/3/articles
+Completed 302 Found in 16ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:37:00 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:37:02 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+WAL0ncTmkb8n0yi0yKp49F6LsKYf7QIoG/c2ToGwHkEfi4WbQ8Uf4lT0RyPE0daHmAEZvp9GEaRrwxwPj0gqg==", "article"=>{"article"=>"fihvuiq"}, "button"=>"", "liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "fihvuiq"], ["created_at", "2018-04-17 19:37:02.021472"], ["updated_at", "2018-04-17 19:37:02.021472"], ["liste_id", 3]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/3/articles
+Completed 302 Found in 15ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:37:02 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-17 21:37:09 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered listes/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 62ms (Views: 57.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 21:37:14 +0200
+Processing by ListesController#root as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-17 21:37:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:37:39 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 54.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-17 21:37:40 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-04-17 21:37:41 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 3]]
+  Rendered articles/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-17 21:37:41 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2018-04-18 07:37:25 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/articles"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-18 07:37:30 +0200
+Processing by ListesController#root as HTML
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:37:30 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 224ms (Views: 223.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 07:37:36 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 114ms (Views: 110.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-18 07:39:17 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M1ZEyFbJg2zgG0gR/iQyckCp1Jr9RMHw1msXyxYXZW/7B+3N4aXkKSUAMC4DoI+tngNH1ODzjZpCK1vqXS0HZg==", "user"=>{"name"=>"michel", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER(?) LIMIT ?[0m  [["name", "michel"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 21ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 07:39:27 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-18 07:39:44 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dsh+KwNMzJtjkhb7uWKvbONn66Qc1R4ImJGQ99V3V+b/tF9dSpz4wmxdNWQirZ+DCpjeO0fBxRULtJmKswvHdQ==", "user"=>{"name"=>"jacqueline", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER(?) LIMIT ?[0m  [["name", "jacqueline"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_hash", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "jacqueline"], ["password_hash", "$2a$10$T3p0kRCtTOjjbwZJQoxH3udDKoI5R5WpiQT51IkJC1W521YTAIqCi"], ["salt", "$2a$10$T3p0kRCtTOjjbwZJQoxH3u"], ["created_at", "2018-04-18 05:39:44.126668"], ["updated_at", "2018-04-18 05:39:44.126668"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 07:39:44 +0200
+Processing by ListesController#root as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-18 07:39:44 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered listes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-04-18 07:39:53 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-04-18 07:39:55 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YC78UmSeRcTWwJdTRu+VFARis1yDNW7B+n7tsBiinEACGDM1oiOSS52ttgNk+ooDUcczftRGX+2LAFuqf10+3Q==", "liste"=>{"nom_liste"=>"test"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListe Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "listes" WHERE "listes"."nom_liste" = ? AND "listes"."nom_liste" = ? AND "listes"."user_id" = ? LIMIT ?[0m  [["nom_liste", "Test"], ["nom_liste", "Test"], ["user_id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "listes" ("nom_liste", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["nom_liste", "Test"], ["created_at", "2018-04-18 05:39:55.593965"], ["updated_at", "2018-04-18 05:39:55.593965"], ["user_id", 8]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/8/articles
+Completed 302 Found in 20ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/listes/8/articles" for 127.0.0.1 at 2018-04-18 07:39:55 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"8"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 8]]
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 66ms (Views: 37.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/listes/8/articles" for 127.0.0.1 at 2018-04-18 07:39:59 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"glPplkoh9lrJ/J1f/YgkGoN5fPH4x1leERbXNNu53IVzL8jgA/HCA8YzvsBmRxT1aoZJbqPTgkOCM95JvcVMFg==", "article"=>{"article"=>"des trucs"}, "button"=>"", "liste_id"=>"8"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "des trucs"], ["created_at", "2018-04-18 05:39:59.251717"], ["updated_at", "2018-04-18 05:39:59.251717"], ["liste_id", 8]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/8/articles
+Completed 302 Found in 9ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/listes/8/articles" for 127.0.0.1 at 2018-04-18 07:39:59 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"8"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 8]]
+  Rendered articles/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 52ms (Views: 47.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/log-out" for 127.0.0.1 at 2018-04-18 07:40:01 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 07:40:01 +0200
+Processing by ListesController#root as HTML
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:40:01 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-04-18 07:40:07 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mpzhltCimdwmEpVr1EpVvsu/Qii5Z3nVk1g4u/j6gyBThBoZ3FxB4NOJ8R7loomQC0sMvIjduLjvz5lAJbGGJQ==", "name"=>"jacqueline", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "jacqueline"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 07:40:07 +0200
+Processing by ListesController#root as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+Redirected to http://localhost:3000/listes/8/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/8/articles" for 127.0.0.1 at 2018-04-18 07:40:07 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"8"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 8]]
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-04-18 07:40:30 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered listes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:41:18 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:48:48 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:4: syntax error, unexpected ','
+...pend=  form_tag log_in_path do, :html => {:class => "form-ho...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:4: syntax error, unexpected keyword_do_block, expecting keyword_end
+...:class => "form-horizontal"} do |f|  @output_buffer.safe_app...
+...                               ^):
+  
+app/views/sessions/new.html.erb:4: syntax error, unexpected ','
+app/views/sessions/new.html.erb:4: syntax error, unexpected keyword_do_block, expecting keyword_end
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:49:09 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 07:49:13 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:49:15 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 07:50:22 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:50:24 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:51:18 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:51:21 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:53:03 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 07:53:06 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:53:08 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:53:41 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 07:53:42 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:53:44 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:54:12 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:55:01 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:55:19 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:56:03 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:56:26 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected ',', expecting '}'
+...ffer.append=( label_tag {:name, class: "control-label col-sm...
+...                               ^):
+  
+app/views/sessions/new.html.erb:6: syntax error, unexpected ',', expecting '}'
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:56:39 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected ',', expecting =>
+...fer.append=( label_tag ({:name, class: "control-label col-sm...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+...lass: "control-label col-sm-2"}) );@output_buffer.safe_appen...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:31: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/sessions/new.html.erb:6: syntax error, unexpected ',', expecting =>
+app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/sessions/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/views/sessions/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/sessions/new.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:57:43 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting =>
+...fer.append=( label_tag ({:name}, {class: "control-label col-...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected ')', expecting keyword_end
+...s: "control-label col-sm-2"}) );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting =>
+app/views/sessions/new.html.erb:6: syntax error, unexpected ')', expecting keyword_end
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:58:40 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected ',', expecting ')'
+...end=( label_tag ({text: :name}, {class: "control-label col-s...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+...lass: "control-label col-sm-2"}) );@output_buffer.safe_appen...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:31: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/sessions/new.html.erb:6: syntax error, unexpected ',', expecting ')'
+app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/sessions/new.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/views/sessions/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/sessions/new.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:58:58 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:59:50 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 07:59:59 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:00:57 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting =>
+...ffer.append=( label_tag({:name},{class: "test"}) );@output_b...
+...                               ^
+/home/cthaat/rails-workspace/Liste_Courses/app/views/sessions/new.html.erb:6: syntax error, unexpected ')', expecting keyword_end
+..._tag({:name},{class: "test"}) );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/sessions/new.html.erb:6: syntax error, unexpected '}', expecting =>
+app/views/sessions/new.html.erb:6: syntax error, unexpected ')', expecting keyword_end
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:02:13 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:02:53 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:03:13 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:03:37 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:06:17 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:07:06 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:07:35 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:09:38 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:10:50 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-out" for 127.0.0.1 at 2018-04-18 08:10:54 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 08:10:54 +0200
+Processing by ListesController#root as HTML
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:10:54 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-04-18 08:10:59 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ljfe5ZBbUoXGolg5qo0wPrGxwGt9fDVk/kr1Uf79CIfnLyVqnKWKuTM5PEybZewQcUWO/0zG9AmC3VSqI7YNgg==", "name"=>"francis", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "francis"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 08:10:59 +0200
+Processing by ListesController#root as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-18 08:10:59 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/log-out" for 127.0.0.1 at 2018-04-18 08:11:04 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 08:11:04 +0200
+Processing by ListesController#root as HTML
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:11:04 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 08:11:05 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 08:12:05 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:12:06 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-04-18 08:12:13 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nn5EFo6EPDlaBGBCNgwmho4SVEInlqukjvvL1iNwK+r/Zr+ZgnrkBa+fBDcH5PqoTuYa1hYsasnybGot/jsu7w==", "name"=>"francis", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "francis"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 08:12:13 +0200
+Processing by ListesController#root as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-18 08:12:13 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/listes/2/articles" for 127.0.0.1 at 2018-04-18 08:12:20 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+3eOjMIduId1wsSwvWrYlwDf7Bbih8X9wMrKmFJPtHkKC6/6i82M3noN5y8mpeh46SDZibmTHuBT78PlNDMk6g==", "article"=>{"article"=>"wuhou"}, "button"=>"", "liste_id"=>"2"}
+  [1m[36mListe Load (0.1ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "wuhou"], ["created_at", "2018-04-18 06:12:20.506323"], ["updated_at", "2018-04-18 06:12:20.506323"], ["liste_id", 2]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 17ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-04-18 08:12:20 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."liste_id" = ?[0m  [["liste_id", 2]]
+  Rendered articles/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/log-out" for 127.0.0.1 at 2018-04-18 08:12:28 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 08:12:28 +0200
+Processing by ListesController#root as HTML
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:12:28 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-04-18 08:12:30 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-04-18 08:12:32 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
