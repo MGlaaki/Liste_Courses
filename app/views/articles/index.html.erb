@@ -28,7 +28,7 @@
   <thead>
     <tr>
       <th>Article</th>
-      <th id="buttonstRow"><%= link_to "", 'destroy_all', class: 'btn-sm btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></th>
+      <th id="buttonstRow"><%= link_to "", "/listes/#{@current_id}/destroy_all", class: 'btn-sm btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></th>
     </tr>
   </thead>
 
@@ -65,6 +65,10 @@
 <p id=alert><%=alert%></p>
 
 <div><%= link_to "Editer les listes", listes_path %></div>
+
+<% @articles.each do |a| %>
+  <%= a.id %>
+<%end%>
 
   <%# button_tag "", action:"/articles/#{article[:id]}", class: 'btn-sm btn-danger glyphicon glyphicon-minus', method: :delete%>
   <%#link_to (‘<i class=“fa fa-thumbs-up fa-lg”> </i>’).html_safe, vote_path(@image), :method=> :delete, :remote=> true%>

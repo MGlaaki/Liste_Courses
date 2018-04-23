@@ -10,13 +10,13 @@ class ApplicationController < ActionController::Base
       redirect_to log_in_path
 
     else
-      @listes = Liste.where(user_id: session[:user_id])
-      if @listes.size > 0
-        root_id = @listes[0].id
-        redirect_to controller: 'articles', liste_id: root_id
-      else
-        redirect_to listes_path
-      end
+      #@listes = Liste.where(user_id: session[:user_id])
+      #if @listes.size > 0
+        #root_id = @listes[0].id
+        redirect_to controller: 'articles', liste_id: 0
+      #else
+      #  redirect_to listes_path
+      #end
     end
   end
 end

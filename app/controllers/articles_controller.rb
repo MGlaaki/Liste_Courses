@@ -1,26 +1,31 @@
 class ArticlesController < ApplicationController
   #before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :set_liste, only: [:create, :destroy, :destroy_all]
+  before_action :set_liste, only: [:create, :destroy_all]
   before_action :authenticate
 
   # GET /articles
   # GET /articles.json
   def index
-    @listes = Liste.where(user_id: session[:user_id])
+    @listes = Liste.references(:article).where(user_id: session[:user_id])
+    @current_id = params[:liste_id] == "0" ? @listes[0].id.to_s : params[:liste_id]
+
 
     @listes.each do |l|
-      @liste = l if l.id.to_s == params[:liste_id]
+      if l.id.to_s == @current_id
+        @liste = l
+        @articles = @liste.article
+      end
     end
 
-    if (@liste.user_id != session[:user_id])
+    if (@listes.size == 0 || !@liste)
       redirect_to "/"
     end
 
-    @articles = @liste.article.all
+    #@articles = @liste.article.all
     @article = Article.new(:liste => @liste)
   end
 
-  # GET /articles/new
+  #  GET /articles/new
   def new
     @article = Article.new
   end
@@ -44,7 +49,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1
   def destroy
-    @article = @liste.article.find(params[:id])
+    @article = Article.find(params[:id])
     @article.delete
     respond_to do |format|
       format.html { redirect_to liste_articles_url, notice: 'Elément supprimé' }
@@ -52,7 +57,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy_all
-    @articles = @liste.article.all
+    @articles = @liste.article.all? { |e|  }
     @articles.delete_all
     respond_to do |format|
       format.html { redirect_to liste_articles_url, notice: 'Reset liste effectué'}
