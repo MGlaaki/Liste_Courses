@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :name, :case_sensitive => false
   validates_confirmation_of :password
   before_save :encrypt_password
+  has_many :partage
 
   def encrypt_password
     self.salt = BCrypt::Engine.generate_salt

@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :partages
 
-  root 'listes#root'
+
+
+  root 'application#root'
 
   get "/log-in" => "sessions#new"
   post "/log-in" => "sessions#create"

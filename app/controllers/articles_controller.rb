@@ -1,14 +1,21 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  #before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_liste, only: [:create, :destroy, :destroy_all]
+  before_action :authenticate
 
   # GET /articles
   # GET /articles.json
   def index
-    @liste = Liste.find(params[:liste_id])
+    @listes = Liste.where(user_id: session[:user_id])
+
+    @listes.each do |l|
+      @liste = l if l.id.to_s == params[:liste_id]
+    end
+
     if (@liste.user_id != session[:user_id])
       redirect_to "/"
     end
-    @listes = Liste.where(user_id: session[:user_id])
+
     @articles = @liste.article.all
     @article = Article.new(:liste => @liste)
   end
@@ -21,7 +28,6 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @liste = Liste.find(params[:liste_id])
     @article = @liste.article.build
     @article.article = params[:article][:article]
 
@@ -38,8 +44,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1
   def destroy
-    liste = Liste.find(params[:liste_id])
-    @article = liste.article.find(params[:id])
+    @article = @liste.article.find(params[:id])
     @article.delete
     respond_to do |format|
       format.html { redirect_to liste_articles_url, notice: 'Elément supprimé' }
@@ -47,7 +52,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy_all
-    @liste = Liste.find(params[:liste_id])
     @articles = @liste.article.all
     @articles.delete_all
     respond_to do |format|
@@ -57,12 +61,8 @@ class ArticlesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
+    def set_liste
+      @liste = Liste.find(params[:liste_id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:article, :ajoutepar)
-    end
-end
+  end
