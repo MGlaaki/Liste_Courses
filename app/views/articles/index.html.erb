@@ -43,6 +43,7 @@
 
 
   </tbody>
+
 </table>
 
 <table width=100% class="table-hover table">
@@ -66,9 +67,6 @@
 
 <div><%= link_to "Editer les listes", listes_path %></div>
 
-<% @articles.each do |a| %>
-  <%= a.id %>
-<%end%>
 
   <%# button_tag "", action:"/articles/#{article[:id]}", class: 'btn-sm btn-danger glyphicon glyphicon-minus', method: :delete%>
   <%#link_to (‘<i class=“fa fa-thumbs-up fa-lg”> </i>’).html_safe, vote_path(@image), :method=> :delete, :remote=> true%>

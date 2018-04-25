@@ -1,0 +1,6 @@
+<%= form_for @partage do |f| %>
+
+  <div><%= f.label "Liste à partager" %></div>
+  <div><%= f.collection_select :liste_id, @listes, :id, :nom_liste, include_blank: true%></div>
+
+<% end %>
