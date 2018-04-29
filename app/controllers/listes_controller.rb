@@ -2,7 +2,8 @@ class ListesController < ApplicationController
   before_action :authenticate
 
   def index
-    @listes = Liste.where(user_id: session[:user_id])
+    @listes = Liste.owner_and_shared_with(session[:user_id])
+
   end
 
   def new

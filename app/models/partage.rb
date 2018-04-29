@@ -1,4 +1,7 @@
 class Partage < ApplicationRecord
-  belongs_to :user
+  validates :liste_id, presence: true
 
+  belongs_to :user, foreign_key: "destinataire_id"
+
+  attr_accessor :destinataire_name
 end

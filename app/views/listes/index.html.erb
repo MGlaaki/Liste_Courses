@@ -11,19 +11,35 @@
 
   <% else %>
 
+  <div> Vos listes :
   <table width=100% class="table-hover table">
     <thead>
-    <% @listes.each do |l|%>
+    <% @listes.select{|l| l.user_id == session[:user_id]}.each do |l|%>
       <tr>
         <td><%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
         <%=link_to l.nom_liste, liste_path(id: l.id)%></td>
+        <td>Partagé avec : <%= l.partages.to_a.size > 0 ? l.partages.to_a.map{|p| p.user.name.capitalize}.join(", ") : "personne" %></td>
       </tr>
+
     <%end%>
   <%end%>
 </thead>
 </table>
+</div>
 
-
+<div> Vos listes partagées :
+  <table width=100% class="table-hover table">
+  <thead>
+  <% @listes.select{|l| l.user_id != session[:user_id]}.each do |l|%>
+    <tr>
+      <td><%= l.nom_liste %></td>
+      <td><%= "Appartient à #{l.user.name.capitalize}" %></td>
+    </tr>
+<%end%>
+</table>
+</thead>
+</table>
+</div>
 
   <div> <%= link_to "Nouvelle liste", new_liste_path %> </div>
   <div> <%= link_to "Retour aux listes", root_path %></div>

@@ -1,6 +1,13 @@
 <%= form_for @partage do |f| %>
 
   <div><%= f.label "Liste à partager" %></div>
-  <div><%= f.collection_select :liste_id, @listes, :id, :nom_liste, include_blank: true%></div>
+  <div><%= f.collection_select :liste_id, @listes, :id, :nom_liste, include_blank: false%></div>
+
+  <div><%= f.label "Avec" %>
+  <div><%= f.text_field :destinataire_name %></div>
+
+  <div><%= f.submit %><div>
 
 <% end %>
+
+<div><%= simple_format alert %> </div>
