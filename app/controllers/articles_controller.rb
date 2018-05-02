@@ -9,18 +9,11 @@ class ArticlesController < ApplicationController
     #@listes = Liste.references(:article).where(user_id: session[:user_id])
     @listes = Liste.owner_and_shared_with(session[:user_id]).includes(:article)
 
-    @current_id = params[:liste_id] == "0" && @listes.size > 0 ? @listes[0].id.to_s : params[:liste_id]
-
-
     @listes.each do |l|
-      if l.id.to_s == @current_id
+      if l.id.to_s == params[:liste_id]
         @liste = l
         @articles = @liste.article
       end
-    end
-
-    if (@listes.size == 0 || !@liste)
-      redirect_to listes_path
     end
 
     @article = Article.new(:liste => @liste)

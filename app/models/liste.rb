@@ -18,7 +18,7 @@ class Liste < ApplicationRecord
     Liste.references(:partages)
          .includes(partages: :destinataire)
          .includes(:user)
-         .where("partages.destinataire_id ='?' OR listes.user_id='?'", id, id)
+         .where("partages.destinataire_id ='?' OR listes.user_id='?'", id.to_i, id.to_i)
   end
 
 
