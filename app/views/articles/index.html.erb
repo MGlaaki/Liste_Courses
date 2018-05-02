@@ -18,7 +18,7 @@
 
 <ul class="nav nav-tabs">
   <% @listes.each do |l| %>
-    <li <%= l.id == @liste.id ? 'class=active' : ''%> ><%= link_to l.nom_liste, liste_articles_path(l.id) %></li>
+    <li <%= l.id == @liste.id ? 'class=active' : ''%> ><%= link_to l.beautiful_name(session[:user_id]), liste_articles_path(l.id) %></li>
   <%end%>
   <li><%= link_to "", new_liste_path, class: 'btn-sm glyphicon glyphicon-plus'%></li>
 

@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     #@listes = Liste.references(:article).where(user_id: session[:user_id])
-    @listes = Liste.owner_and_shared_with(session[:user_id])
+    @listes = Liste.owner_and_shared_with(session[:user_id]).includes(:article)
 
     @current_id = params[:liste_id] == "0" && @listes.size > 0 ? @listes[0].id.to_s : params[:liste_id]
 
@@ -23,7 +23,6 @@ class ArticlesController < ApplicationController
       redirect_to listes_path
     end
 
-    #@articles = @liste.article.all
     @article = Article.new(:liste => @liste)
   end
 

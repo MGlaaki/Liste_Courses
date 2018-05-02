@@ -23,4 +23,8 @@ class User < ApplicationRecord
     end
   end
 
+  def pretty_name
+    name.capitalize
+  end
+
 end
