@@ -8,6 +8,7 @@ class PartagesController < ApplicationController
   def new
     @partage = Partage.new
     @listes = Liste.where(user_id: session[:user_id])
+    @source_liste = params[:liste_id]
 
 
   end

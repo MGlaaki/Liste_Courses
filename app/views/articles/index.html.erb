@@ -66,6 +66,7 @@
 <p id=alert><%=alert%></p>
 
 <div><%= link_to "Editer les listes", listes_path %></div>
+<div><%= link_to "Partager une liste", new_partage_path, liste_id: @liste.id %></div>
 
 
   <%# button_tag "", action:"/articles/#{article[:id]}", class: 'btn-sm btn-danger glyphicon glyphicon-minus', method: :delete%>
