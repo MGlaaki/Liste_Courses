@@ -2,7 +2,7 @@ class PartagesController < ApplicationController
   before_action :authenticate
 
   def index
-    @test = params[:format]
+    @listes_partagees = Liste.owner_and_shared_with session[:user_id]
   end
 
   def new
@@ -37,6 +37,12 @@ class PartagesController < ApplicationController
       @users.each{|u| error << u.name << "\n"}
       redirect_to session.delete(:return_to), alert: error
     end
+  end
+
+  def destroy
+    @partage = Partage.find(params[:id])
+    @partage.destroy
+    redirect_to "/"
   end
 
 

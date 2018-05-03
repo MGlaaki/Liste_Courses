@@ -5,6 +5,7 @@ class Partage < ApplicationRecord
 
 
   belongs_to :destinataire, class_name: "User", foreign_key: "destinataire_id"
+  belongs_to :proprietaire, class_name: "User", foreign_key: "proprietaire_id"
 
   delegate :name, :pretty_name, to: :destinataire, prefix: true, allow_nil: true
 

@@ -9,7 +9,7 @@ class Liste < ApplicationRecord
     message: "Vous avez déjà une liste avec ce nom"}
 
   has_many :article, dependent: :destroy
-  has_many :partages
+  has_many :partages, dependent: :destroy
   has_many :partages_users, through: :partages, class_name: "User", source: :destinataire
 
 

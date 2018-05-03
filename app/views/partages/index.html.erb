@@ -1,1 +1,11 @@
-<%=  @test %>
+<% @listes_partagees.each do |l|%>
+  <div><%= l.nom_liste %></div>
+  <%l.partages.each do |p|%>
+    <div><%="#{p.proprietaire.name} -> #{p.destinataire.name}"%>
+    <%=link_to "", partage_path(id: p.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete%></div>
+  <%end%>
+  <br/>
+<%end%>
+
+<div><%= link_to "Partager une liste", new_partage_path%></div>
+<div><%=link_to "Retour", root_path%></div>
