@@ -51,7 +51,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy_all
-    @articles = @liste.article.all? { |e|  }
+    @articles = @liste.article.all
     @articles.delete_all
     respond_to do |format|
       format.html { redirect_to liste_articles_url, notice: 'Reset liste effectué'}

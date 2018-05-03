@@ -28,7 +28,7 @@
   <thead>
     <tr>
       <th>Article</th>
-      <th id="buttonstRow"><%= link_to "", "/listes/#{@current_id}/destroy_all", class: 'btn-sm btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></th>
+      <th id="buttonstRow"><%= link_to "", liste_destroy_all_path(liste_id: @liste.id), class: 'btn-sm btn-danger glyphicon glyphicon-trash',method: :delete, data: {confirm: "Remettre la liste à 0 ?"} %></th>
     </tr>
   </thead>
 
