@@ -22,7 +22,11 @@
 <% end %>
 
 
-<p id=alert><%=alert%></p>
+<% if alert && alert["nom_liste"] != ""%>
+<% alert["nom_liste"].each do |e|%>
+  <p id=alert><%=e%></p>
+<%end%>
+<%end%>
 
 <p> <%= link_to "Retour à l'édition des listes", listes_path %></p>
 <p> <%= link_to "Retour aux listes", root_path %></p>

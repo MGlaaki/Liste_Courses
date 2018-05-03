@@ -1,7 +1,12 @@
 class Liste < ApplicationRecord
-  validates :nom_liste, :presence => true
-  validates_length_of :nom_liste, :maximum => 30
-  validates :nom_liste, uniqueness: {scope: [:nom_liste, :user_id]}
+  validates :nom_liste, presence:{
+    message: "Nom liste vide"}
+  validates :nom_liste, length: {maximum: 30,
+    too_long: "Le nom de la liste doit faire moins de %{count} caractères"}
+  validates :nom_liste, format: {with: /\A[a-zA-Z\d\s]*\z/,
+    message: "Seuls les caractères alphanumériques ainsi que \"-\" et \"_\" sont autorisés"}
+  validates :nom_liste, uniqueness: {scope: [:nom_liste, :user_id],
+    message: "Vous avez déjà une liste avec ce nom"}
 
   has_many :article, dependent: :destroy
   has_many :partages

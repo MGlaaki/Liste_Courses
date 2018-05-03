@@ -11,21 +11,15 @@ class ListesController < ApplicationController
   end
 
   def create
+    session[:return_to] ||= request.referer
+
     @liste = Liste.new
     @liste.user_id = session[:user_id]
     @liste.nom_liste = params[:liste][:nom_liste].capitalize
     if @liste.save
       redirect_to liste_articles_path(liste_id: @liste.id)
     else
-      if @liste.errors["nom_liste"][0].include? 'is too long'
-        error = "Trop long nom !"
-      elsif @liste.errors["nom_liste"][0].include? 'can\'t be blank'
-        error = "Le nom de liste ne peut pas être vide"
-      elsif @liste.errors["nom_liste"][0].include? 'has already been taken'
-        error = "Le nom de liste doit être unique"
-      end
-
-      redirect_to new_liste_path, alert: error
+      redirect_to session.delete(:return_to), alert: @liste.errors
     end
   end
 

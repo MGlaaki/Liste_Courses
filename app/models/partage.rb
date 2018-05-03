@@ -1,5 +1,8 @@
 class Partage < ApplicationRecord
   validates :liste_id, presence: true
+  validates :destinataire_id, uniqueness: {scope: :liste_id,
+    message: "Liste déjà partagée avec cet utilisateur"}
+
 
   belongs_to :destinataire, class_name: "User", foreign_key: "destinataire_id"
 
