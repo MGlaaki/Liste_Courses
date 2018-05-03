@@ -45133,3 +45133,606 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/log-in" for 127.0.0.1 at 2018-05-03 08:04:13 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 48.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-05-03 08:04:18 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r1z6CGSdfoYNta9UERpNGV0Noe9YzrnTrBTc3b9lKHzwH9TE5YIQXV9IB1MgQecxTqoY4rRuTMvlCIvboaVJaQ==", "name"=>"younes", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "younes"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-05-03 08:04:18 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-05-03 08:04:26 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XYc2wKURNjgbhk21737f21BobX9t1q3caNMkTNC4uhYCxBgMJA5Y40l75bLeJXXzQ8/UcoF2WMQhz3NKznjbAw==", "name"=>"younes", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "younes"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/log-in
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-05-03 08:04:26 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-05-03 08:04:28 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-05-03 08:04:36 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aGJO8zUQxp3R/7pk5t2cjpHjFjJjscNxY6V/X2W5psCAJz48UJX3Xd+alEJrtCcKq3urfJJ7Fi53R6r3UoUYqw==", "user"=>{"name"=>"younes", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER(?) LIMIT ?[0m  [["name", "younes"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_hash", "salt", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "younes"], ["password_hash", "$2a$10$oL9TQTJBAX5Abn9wGmSRfuAkmVA.T9EBsNdqKfZgsQEo2R3tir92G"], ["salt", "$2a$10$oL9TQTJBAX5Abn9wGmSRfu"], ["created_at", "2018-05-03 06:04:36.340502"], ["updated_at", "2018-05-03 06:04:36.340502"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 08:04:36 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://localhost:3000/listes
+Completed 302 Found in 19ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-05-03 08:04:36 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "listes"."id") FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendered listes/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-05-03 08:04:40 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 52ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-05-03 08:04:44 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AMHOgPRYwDdReT7vVg5MlcG1xons+i9HF3U1N8x/xj5hUL9av4DWAYeVsP9E2uLDnOtOG82c6TdcAJAkS9ZcMg==", "liste"=>{"nom_liste"=>"CD"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListe Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "listes" WHERE "listes"."nom_liste" = ? AND "listes"."nom_liste" = ? AND "listes"."user_id" = ? LIMIT ?[0m  [["nom_liste", "Cd"], ["nom_liste", "Cd"], ["user_id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "listes" ("nom_liste", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["nom_liste", "Cd"], ["created_at", "2018-05-03 06:04:44.210358"], ["updated_at", "2018-05-03 06:04:44.210358"], ["user_id", 13]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 32ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:04:44 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 105ms (Views: 61.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:04:49 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vqDNONGalIQoqF5E2aPOdm/fXgtJozpLmHFy9/oaa03h4+P0UIX6X3pV9kPo+GRefHjnBqUDz1PRbSXx5NoKWA==", "article"=>{"article"=>"batuushka"}, "button"=>"", "liste_id"=>"14"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "batuushka"], ["created_at", "2018-05-03 06:04:49.994089"], ["updated_at", "2018-05-03 06:04:49.994089"], ["liste_id", 14]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 12ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:04:50 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/listes/14/articles/35" for 127.0.0.1 at 2018-05-03 08:04:53 +0200
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MM/BTyNsxg6eJdFOosuipiyBw9davsB/nT8tBu8WqnlvjO+DonOo1czYeUmTkAiOPyZ62rYeNWfUI3oA8dbLbA==", "liste_id"=>"14", "id"=>"35"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[35mSQL (11.7ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 35]]
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 15ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:04:53 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:04:56 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9MifRBRDt9SRTpKiDqu+F0LeSIXQIcDWyWpFrb08Gwuri7GIlVzZD8OzOqU/8BQ/UXnxiDyBNc6AdhKro/x6Hg==", "article"=>{"article"=>"batushka"}, "button"=>"", "liste_id"=>"14"}
+  [1m[36mListe Load (0.5ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "batushka"], ["created_at", "2018-05-03 06:04:56.208576"], ["updated_at", "2018-05-03 06:04:56.208576"], ["liste_id", 14]]
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 29ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:04:56 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 50ms (Views: 44.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:05:05 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sYLCWqUvCycV1doodVq2XAsuLU1I8bLqUUEa55ftkWDuweyWJDBl/Ecoci9EARx0GImUQKRRR/IYXU3hiS3wdQ==", "article"=>{"article"=>"vredehammer"}, "button"=>"", "liste_id"=>"14"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "vredehammer"], ["created_at", "2018-05-03 06:05:05.570491"], ["updated_at", "2018-05-03 06:05:05.570491"], ["liste_id", 14]]
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 14ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:05:05 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 08:05:22 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 13]]
+  Rendered partages/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 51ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/partages" for 127.0.0.1 at 2018-05-03 08:05:26 +0200
+Processing by PartagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cIB/vlLnxdaAfU2kzog5QiiF9RrpYYiuq/LW4xgkTO53tc5LsbM1cpa4oZWdyhuyUh1XwpEzM8nbgWGovmF6Uw==", "partage"=>{"liste_id"=>"14", "destinataire_name"=>"prout"}, "commit"=>"Create Partage"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'prout' AND id != '13')[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPartage Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "partages" WHERE "partages"."destinataire_id" = ? AND "partages"."liste_id" = ? LIMIT ?[0m  [["destinataire_id", 12], ["liste_id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "partages" ("proprietaire_id", "destinataire_id", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?, ?)[0m  [["proprietaire_id", 13], ["destinataire_id", 12], ["created_at", "2018-05-03 06:05:26.126136"], ["updated_at", "2018-05-03 06:05:26.126136"], ["liste_id", 14]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 08:05:26 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') AND "listes"."id" = 14 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:05:26 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-05-03 08:05:29 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "listes"."id") FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendered listes/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 08:05:32 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') AND "listes"."id" = 14 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 14ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:05:32 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/new" for 127.0.0.1 at 2018-05-03 08:05:35 +0200
+Processing by ListesController#new as HTML
+  Rendering listes/new.html.erb within layouts/application
+  Rendered listes/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/listes" for 127.0.0.1 at 2018-05-03 08:05:37 +0200
+Processing by ListesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OnBpuFPI8MZoF4kEzhaW6fkI0+ZDzNrRFkSc1+2nRTVb4RhiGBDm8L77BxTcwji/pFZbdGKqHKFdMTnEag7fOQ==", "liste"=>{"nom_liste"=>"test2"}, "commit"=>"Create Liste"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mListe Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "listes" WHERE "listes"."nom_liste" = ? AND "listes"."nom_liste" = ? AND "listes"."user_id" = ? LIMIT ?[0m  [["nom_liste", "Test2"], ["nom_liste", "Test2"], ["user_id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "listes" ("nom_liste", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["nom_liste", "Test2"], ["created_at", "2018-05-03 06:05:37.274105"], ["updated_at", "2018-05-03 06:05:37.274105"], ["user_id", 13]]
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/15/articles
+Completed 302 Found in 20ms (ActiveRecord: 15.1ms)
+
+
+Started GET "/listes/15/articles" for 127.0.0.1 at 2018-05-03 08:05:37 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"15"}
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-05-03 08:05:38 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "listes"."id") FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendered listes/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 08:05:41 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13') AND "listes"."id" = 14 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/14/articles
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:05:41 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (1.1ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 61ms (Views: 48.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/listes/15/articles" for 127.0.0.1 at 2018-05-03 08:05:53 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"15"}
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 48ms (Views: 42.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:05:54 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/15/articles" for 127.0.0.1 at 2018-05-03 08:06:03 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"15"}
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listes/14/articles" for 127.0.0.1 at 2018-05-03 08:06:05 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"14"}
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/15/articles" for 127.0.0.1 at 2018-05-03 08:06:07 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"15"}
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='13' OR listes.user_id='13')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 46ms (Views: 39.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 18:16:43 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#root as HTML
+Redirected to http://localhost:3000/log-in
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/log-in" for 127.0.0.1 at 2018-05-03 18:16:43 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 285ms (Views: 284.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/log-in" for 127.0.0.1 at 2018-05-03 18:16:55 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vKUV85dXnMNXW1fcrEAUyjJe06jGnR+AosUzPsYO+18+I/oqeExEPabjUq8UHzxyfsO4kO6F7Ntq33q65ARgGg==", "name"=>"francis", "password"=>"[FILTERED]", "commit"=>"Sign in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["name", "francis"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 89ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 18:16:55 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') AND "listes"."id" = 2 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 60ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:16:55 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 50ms (Views: 38.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:17:04 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCYBeTpco4blQbMq5auGli3nbA7Mr+CaIZIzvDDZ6WLqoO6g1Ud7eBT5tlld9K4uYXoHNuS3E8HpiHo4EtNyJw==", "article"=>{"article"=>"1"}, "button"=>"", "liste_id"=>"2"}
+  [1m[36mListe Load (0.5ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "1"], ["created_at", "2018-05-03 16:17:04.203992"], ["updated_at", "2018-05-03 16:17:04.203992"], ["liste_id", 2]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 32ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:17:04 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (1.5ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 57ms (Views: 43.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:17:06 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeqsnTYM5taegqYQBIhXP3l28EoWNybvTC4UddtMr4PfbENE2Rc+KG86o2O813+HNeubcj4v1bSENF3x+UY0xg==", "article"=>{"article"=>"2"}, "button"=>"", "liste_id"=>"2"}
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "2"], ["created_at", "2018-05-03 16:17:06.105548"], ["updated_at", "2018-05-03 16:17:06.105548"], ["liste_id", 2]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 18ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:17:06 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (1.1ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 61ms (Views: 52.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:17:07 +0200
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pN7ako9zoqgiNPlQE6QlKOGJ+XOk72fDyB9ObAjF6EQmWDVLYGh6VtOM/COr+w2QrRSSS4z3lJgABQfoKs9zAQ==", "article"=>{"article"=>"3"}, "button"=>"", "liste_id"=>"2"}
+  [1m[36mListe Load (0.3ms)[0m  [1m[34mSELECT  "listes".* FROM "listes" WHERE "listes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("article", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?)[0m  [["article", "3"], ["created_at", "2018-05-03 16:17:07.807554"], ["updated_at", "2018-05-03 16:17:07.807554"], ["liste_id", 2]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 12ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:17:07 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (0.8ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 49ms (Views: 41.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 18:21:51 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered partages/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 62ms (Views: 46.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/partages" for 127.0.0.1 at 2018-05-03 18:21:56 +0200
+Processing by PartagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hBuEQZ7DkO+gtvklgx1z0NOiQ57/PUy74YrQggDRSQgjwwwxA87ob4eLm6MDIUFwNz++9ON2pLX3V02PjkYB3g==", "partage"=>{"liste_id"=>"2", "destinataire_name"=>"mich"}, "commit"=>"Create Partage"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'mich' AND id != '1')[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (lower(name) LIKE lower('%mich%') AND id != '1')[0m
+Redirected to http://localhost:3000/partages/new
+Completed 302 Found in 32ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 18:21:56 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered partages/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/partages" for 127.0.0.1 at 2018-05-03 18:22:02 +0200
+Processing by PartagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ULWj2QOT1xY9jp4uND6SpHvRBCIXIwAf4d69lZEgOsvSM0wA7IgP6Mw2m12MYbocN0xvGj8780QpxPQRsyqhjg==", "partage"=>{"liste_id"=>"2", "destinataire_name"=>"michel"}, "commit"=>"Create Partage"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'michel' AND id != '1')[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPartage Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "partages" WHERE "partages"."destinataire_id" = ? AND "partages"."liste_id" = ? LIMIT ?[0m  [["destinataire_id", 5], ["liste_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/partages/new
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 18:22:02 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered partages/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/partages" for 127.0.0.1 at 2018-05-03 18:22:06 +0200
+Processing by PartagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMgH7wGwSE1sqybcaBXStFmERNB3fZpvK9dapyJKBm/aTug27quQs50TI6/QSvoMFRkv6F9laTTjzRMjAECdKg==", "partage"=>{"liste_id"=>"2", "destinataire_name"=>"micheline"}, "commit"=>"Create Partage"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'micheline' AND id != '1')[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPartage Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "partages" WHERE "partages"."destinataire_id" = ? AND "partages"."liste_id" = ? LIMIT ?[0m  [["destinataire_id", 10], ["liste_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/partages/new
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 18:22:06 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered partages/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 18:22:14 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') AND "listes"."id" = 2 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:22:14 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 35.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 18:22:18 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 43ms (Views: 37.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 18:22:20 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered partages/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/listes" for 127.0.0.1 at 2018-05-03 18:22:25 +0200
+Processing by ListesController#index as HTML
+  Rendering listes/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "listes"."id") FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendered listes/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 18:22:29 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') AND "listes"."id" = 2 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:22:29 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (1.1ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 71ms (Views: 59.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/partages/new" for 127.0.0.1 at 2018-05-03 18:22:31 +0200
+Processing by PartagesController#new as HTML
+  Rendering partages/new.html.erb within layouts/application
+  [1m[36mListe Load (0.2ms)[0m  [1m[34mSELECT "listes".* FROM "listes" WHERE "listes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered partages/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/partages" for 127.0.0.1 at 2018-05-03 18:22:38 +0200
+Processing by PartagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E/afD8YfxKmwxXCvQGwJR/MNEGgriZiktwMXT34EQ4G0Lhd/WxK8KZf4EinAUDvnF5DtAjfCcKqh3opC8JMLVw==", "partage"=>{"liste_id"=>"3", "destinataire_name"=>"michel"}, "commit"=>"Create Partage"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name = 'michel' AND id != '1')[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPartage Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "partages" WHERE "partages"."destinataire_id" = ? AND "partages"."liste_id" = ? LIMIT ?[0m  [["destinataire_id", 5], ["liste_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "partages" ("proprietaire_id", "destinataire_id", "created_at", "updated_at", "liste_id") VALUES (?, ?, ?, ?, ?)[0m  [["proprietaire_id", 1], ["destinataire_id", 5], ["created_at", "2018-05-03 16:22:38.221877"], ["updated_at", "2018-05-03 16:22:38.221877"], ["liste_id", 3]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-03 18:22:38 +0200
+Processing by ApplicationController#root as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "listes"."id" FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') ORDER BY "listes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1') AND "listes"."id" = 2 ORDER BY "listes"."id" ASC[0m
+Redirected to http://localhost:3000/listes/2/articles
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/listes/2/articles" for 127.0.0.1 at 2018-05-03 18:22:38 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"2"}
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 0.5ms)
+
+
