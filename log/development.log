@@ -47255,3 +47255,85 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:25:56 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (Unknown key: :order. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table, :foreign_type, :index_errors):
+  
+app/models/liste.rb:11:in `<class:Liste>'
+app/models/liste.rb:1:in `<top (required)>'
+app/controllers/articles_controller.rb:10:in `index'
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:26:28 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+Completed 500 Internal Server Error in 3ms
+
+
+  
+ArgumentError (Unknown key: :order. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :table_name, :before_add, :after_add, :before_remove, :after_remove, :extend, :primary_key, :dependent, :as, :through, :source, :source_type, :inverse_of, :counter_cache, :join_table, :foreign_type, :index_errors):
+  
+app/models/liste.rb:11:in `<class:Liste>'
+app/models/liste.rb:1:in `<top (required)>'
+app/controllers/articles_controller.rb:10:in `index'
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:28:09 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `named_scope' for #<Class:0x007f70200ad2e0>):
+  
+app/models/article.rb:6:in `<class:Article>'
+app/models/article.rb:1:in `<top (required)>'
+app/controllers/articles_controller.rb:12:in `index'
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:28:21 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (The scope body needs to be callable.):
+  
+app/models/article.rb:6:in `<class:Article>'
+app/models/article.rb:1:in `<top (required)>'
+app/controllers/articles_controller.rb:12:in `index'
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:28:56 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (Support for calling #default_scope without a block is removed. For example instead of `default_scope where(color: 'red')`, please use `default_scope { where(color: 'red') }`. (Alternatively you can just redefine self.default_scope.)):
+  
+app/models/article.rb:6:in `<class:Article>'
+app/models/article.rb:1:in `<top (required)>'
+app/controllers/articles_controller.rb:12:in `index'
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:29:38 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/cthaat/rails-workspace/Liste_Courses/app/models/article.rb:6: syntax error, unexpected ':', expecting '}'
+  default_scope {order: "created_at"}
+                       ^):
+  
+app/models/article.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/articles_controller.rb:12:in `index'
+Started GET "/listes/3/articles" for 127.0.0.1 at 2018-05-03 19:30:24 +0200
+Processing by ArticlesController#index as HTML
+  Parameters: {"liste_id"=>"3"}
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "listes"."id" AS t0_r0, "listes"."nom_liste" AS t0_r1, "listes"."created_at" AS t0_r2, "listes"."updated_at" AS t0_r3, "listes"."user_id" AS t0_r4, "partages"."id" AS t1_r0, "partages"."proprietaire_id" AS t1_r1, "partages"."destinataire_id" AS t1_r2, "partages"."created_at" AS t1_r3, "partages"."updated_at" AS t1_r4, "partages"."liste_id" AS t1_r5, "users"."id" AS t2_r0, "users"."name" AS t2_r1, "users"."password_hash" AS t2_r2, "users"."salt" AS t2_r3, "users"."created_at" AS t2_r4, "users"."updated_at" AS t2_r5, "users_listes"."id" AS t3_r0, "users_listes"."name" AS t3_r1, "users_listes"."password_hash" AS t3_r2, "users_listes"."salt" AS t3_r3, "users_listes"."created_at" AS t3_r4, "users_listes"."updated_at" AS t3_r5, "articles"."id" AS t4_r0, "articles"."article" AS t4_r1, "articles"."ajoutepar" AS t4_r2, "articles"."created_at" AS t4_r3, "articles"."updated_at" AS t4_r4, "articles"."liste_id" AS t4_r5 FROM "listes" LEFT OUTER JOIN "partages" ON "partages"."liste_id" = "listes"."id" LEFT OUTER JOIN "users" ON "users"."id" = "partages"."destinataire_id" LEFT OUTER JOIN "users" "users_listes" ON "users_listes"."id" = "listes"."user_id" LEFT OUTER JOIN "articles" ON "articles"."liste_id" = "listes"."id" WHERE (partages.destinataire_id ='1' OR listes.user_id='1')[0m
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 101ms (Views: 57.0ms | ActiveRecord: 2.5ms)
+
+

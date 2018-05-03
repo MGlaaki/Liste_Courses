@@ -3,4 +3,6 @@ class Article < ApplicationRecord
 
   belongs_to :liste
 
+  default_scope {order(:created_at)}
+
 end
