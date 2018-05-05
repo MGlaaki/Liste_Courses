@@ -21,5 +21,11 @@
     </div>
 
     <%= yield %>
+
+    <%if (session[:user_id])%>
+      <div><%= link_to "Accueil", root_path unless current_controller?('articles') %></div>
+      <div><%= listes_links %></div>
+      <div><%= partages_links %></div>
+    <%end%>
   </body>
 </html>
