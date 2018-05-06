@@ -4,41 +4,12 @@
 
   <h1> Listes :</h1>
 
-  <%if @listes.size == 0 %>
-      <div>
-        Vous n'avez aucune liste.
-      </div>
-
+  <% if owns_listes?(@listes)%>
+    <%=render 'listes_user', listes: @listes %>
   <% else %>
-
-  <div> Vos listes :
-  <table width=100% class="table-hover table">
-    <thead>
-    <% @listes.select{|l| l.user_id == session[:user_id]}.each do |l|%>
-      <tr>
-        <td><%= link_to "", liste_path(id: l.id), class: 'btn-sm glyphicon glyphicon-trash',method: :delete %>
-        <%=link_to l.nom_liste, liste_path(id: l.id)%></td>
-        <td>Partagé avec : <%= l.partages.to_a.size > 0 ? l.partages.to_a.map{|p| p.destinataire_pretty_name}.join(", ") : "personne" %></td>
-      </tr>
-
-    <%end%>
+    <p><%= link_to "Créez votre première liste", new_liste_path %></p>
   <%end%>
-</thead>
-</table>
-</div>
 
-<div> Vos listes partagées :
-  <table width=100% class="table-hover table">
-  <thead>
-  <% @listes.select{|l| l.user_id != session[:user_id]}.each do |l|%>
-    <tr>
-      <td><%= l.nom_liste %></td>
-      <td><%= "Appartient à #{l.user_pretty_name}" %></td>
-    </tr>
-<%end%>
-</table>
-</thead>
-</table>
-</div>
+  <%= render 'listes_partagees', listes: @listes if receives_listes?(@listes) %>
 
 </div>
