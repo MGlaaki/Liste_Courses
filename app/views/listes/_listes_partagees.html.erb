@@ -1,16 +1,15 @@
 <table width=100% class="table-hover table">
-<thead>
-  <tr>
-    <th>Vos listes partagées</th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Vos listes partagées</th>
+      <th></th>
+    </tr>
 
-<% listes_partagees(@listes).each do |l|%>
-  <tr>
-    <td style="width: 50%"><%= l.nom_liste %></td>
-    <td><%= "Appartient à #{l.user_pretty_name}" %></td>
-  </tr>
-<%end%>
-</table>
-</thead>
+  <% listes_partagees(@listes).each do |l|%>
+    <tr>
+      <td style="width: 50%"><%= l.nom_liste %></td>
+      <td><%= "Appartient à #{l.user_pretty_name}" %></td>
+    </tr>
+  <%end%>
+  </thead>
 </table>

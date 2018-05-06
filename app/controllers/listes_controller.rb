@@ -11,15 +11,13 @@ class ListesController < ApplicationController
   end
 
   def create
-    session[:return_to] ||= request.referer
-
     @liste = Liste.new
     @liste.user_id = session[:user_id]
     @liste.nom_liste = params[:liste][:nom_liste].capitalize
     if @liste.save
       redirect_to liste_articles_path(liste_id: @liste.id)
     else
-      redirect_to session.delete(:return_to), alert: @liste.errors
+      render new_liste_path
     end
   end
 
@@ -32,7 +30,6 @@ class ListesController < ApplicationController
     @liste = Liste.find(params[:id])
     @liste.destroy
     redirect_to listes_path
-
   end
 
 

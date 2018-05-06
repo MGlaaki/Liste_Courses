@@ -1,0 +1,5 @@
+<% if element.errors.any?%>
+<% element.errors.each do |k,v| %>
+  <div id=alert class="col-sm-offset-2"><%= v %></div>
+  <%end%>
+<%end%>

@@ -11,8 +11,8 @@
 <% end %>
 
 <% if @partage.errors.any?%>
-<% @partage.errors[:destinataire].each do |e| %>
-  <p><%= e unless e == "must exist"%></p>
+<% @partage.errors.each do |k,v| %>
+  <p><%= v unless v == "must exist"%></p>
   <%end%>
 <%end%>
 

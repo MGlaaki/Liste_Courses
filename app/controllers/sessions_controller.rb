@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action :authenticate, only: [:destroy]
 
   def new
+    redirect_to "/", notice: "Vous êtes déjà connecté" if session[:user_id]
   end
 
   def create

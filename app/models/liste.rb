@@ -26,7 +26,6 @@ class Liste < ApplicationRecord
          .where("partages.destinataire_id ='?' OR listes.user_id='?'", id.to_i, id.to_i)
   end
 
-
   def beautiful_name(id)
     user_id == id ? nom_liste : "#{nom_liste} (#{user.name.capitalize})"
   end

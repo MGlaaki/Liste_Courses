@@ -19,7 +19,7 @@ class PartagesController < ApplicationController
     @partage = Partage.new
     @partage.found = @users.map{|u| u.name}
     @partage.proprietaire_id = session[:user_id]
-    @partage.destinataire_id = @users[0].id if @users[0]
+    @partage.destinataire_id = @users[0].id if @partage.found.size == 1
 
     @partage.liste_id = params[:partage][:liste_id]
     if @partage.save

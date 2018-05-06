@@ -23,15 +23,13 @@
                 </div>
         </div>
 
+
         <%= f.submit "Sign Up", :class =>"btn btn-default, col-sm-offset-2" %>
           <% end %>
 
-          <% if @user.errors.any?%>
-            <% @user.errors.messages.each do |e|%>
-              <p id=alert class="col-sm-offset-2"><%=e%></p>
-            <% end%>
 
-          <%end%>
+        <%= render 'shared/errors_display', element: @user %>
+
 
 
             <div class="col-sm-offset-2">
