@@ -11,8 +11,7 @@ class PartagesController < ApplicationController
   end
 
   def create
-    @users =  User.where("name = ? AND id != ?", "#{params[:partage][:destinataire_name]}","#{session[:user_id].to_i}").to_a
-
+    @users =  User.where("lower(name) = lower(?) AND id != ?", "#{params[:partage][:destinataire_name]}","#{session[:user_id].to_i}").to_a
     if @users.size != 1
       @users = User.where("lower(name) LIKE lower(?) AND id != ?", "%#{params[:partage][:destinataire_name]}%","#{session[:user_id].to_i}").to_a
     end
