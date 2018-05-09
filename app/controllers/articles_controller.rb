@@ -5,10 +5,10 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @listes = Liste.owner_and_shared_with(session[:user_id]).includes(:article)
+    @listes = Liste.owner_and_shared_with(session[:user_id]).includes(:articles).order("articles.created_at")
 
     @liste = @listes.select{|l| l.id.to_s == params[:liste_id]}[0]
-    @articles = @liste.article.sort_by(&:created_at)
+    @articles = @liste.articles
 
     @article = Article.new
   end
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = @liste.article.build
+    @article = @liste.articles.build
     @article.article = params[:article][:article]
 
 
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy_all
-    @articles = @liste.article.all
+    @articles = @liste.articles.all
     @articles.delete_all
     respond_to do |format|
       format.html { redirect_to liste_articles_url, notice: 'Reset liste effectué'}

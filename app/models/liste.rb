@@ -8,7 +8,7 @@ class Liste < ApplicationRecord
   validates :nom_liste, uniqueness: {scope: [:nom_liste, :user_id],
     message: "Vous avez déjà une liste avec ce nom"}
 
-  has_many :article, dependent: :destroy
+  has_many :articles,dependent: :destroy
   has_many :partages, dependent: :destroy
   has_many :partages_users, through: :partages, class_name: "User", source: :destinataire
 
