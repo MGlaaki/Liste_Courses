@@ -3,29 +3,20 @@ class ArticlesController < ApplicationController
   before_action :set_liste, only: [:create, :destroy_all]
   before_action :authenticate
 
-  # GET /articles
-  # GET /articles.json
+
   def index
-    #@listes = Liste.references(:article).where(user_id: session[:user_id])
     @listes = Liste.owner_and_shared_with(session[:user_id]).includes(:article)
 
-    @listes.each do |l|
-      if l.id.to_s == params[:liste_id]
-        @liste = l
-        @articles = @liste.article
-      end
-    end
+    @liste = @listes.select{|l| l.id.to_s == params[:liste_id]}[0]
+    @articles = @liste.article.sort_by(&:created_at)
 
-    @article = Article.new(:liste => @liste)
+    @article = Article.new
   end
 
-  #  GET /articles/new
   def new
     @article = Article.new
   end
 
-  # POST /articles
-  # POST /articles.json
   def create
     @article = @liste.article.build
     @article.article = params[:article][:article]
@@ -63,5 +54,6 @@ class ArticlesController < ApplicationController
     def set_liste
       @liste = Liste.find(params[:liste_id])
     end
+
 
   end

@@ -1,0 +1,17 @@
+<h1>Changer mon mot de passe</h1>
+
+<%= form_for @user do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label "Ancien mot de passe"%>
+  <%= f.password_field :old_password%>
+
+  <%= f.label "Nouveau mot de passe"%>
+  <%= f.password_field :new_password%>
+
+  <%= f.label "Confirmer le nouveau mot de passe"%>
+  <%= f.password_field :new_password_confirmation%>
+
+  <%= f.submit "OK"%>
+<% end %>

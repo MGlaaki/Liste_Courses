@@ -1,6 +1,4 @@
-<div id="main-container" class="responsive-table">
-
-  <h1> Listes :</h1>
+<h1> Listes :</h1>
 
   <% if owns_listes?(@listes)%>
     <%=render 'listes_user', listes: @listes %>
@@ -9,5 +7,3 @@
   <%end%>
 
   <%= render 'listes_partagees', listes: @listes if receives_listes?(@listes) %>
-
-</div>

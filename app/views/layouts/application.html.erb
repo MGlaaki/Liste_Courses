@@ -17,18 +17,23 @@
       <% if session[:user_id]%>
       <div class="col-sm-offset-2"><%= "Connecté : #{session[:user_name].capitalize}"%>
       <%= link_to "Se déconnecter", log_out_path %></div>
+      <div><%= link_to "Mon compte", user_path(session[:user_id]) %></div>
       <% end %>
     </div>
 
-    <%= yield %>
+    <div class="container-fluid">
+        <div id=notice class="col-sm-offset-2"><%=notice%></div>
 
-    <p id=notice class="col-sm-offset-2"><%=notice%></p>
-    <%if (session[:user_id])%>
-      <div><%= link_to "Accueil", root_path unless current_controller?('articles') %></div>
-      <div><%= listes_links %></div>
-      <div><%= partages_links %></div>
-    <%end%>
+      <%= yield %>
 
+
+
+      <%if (session[:user_id])%>
+        <div><%= link_to "Accueil", root_path unless current_controller?('articles') %></div>
+        <div><%= listes_links %></div>
+        <div><%= partages_links %></div>
+      <%end%>
+    </div>
 
   </body>
 </html>
