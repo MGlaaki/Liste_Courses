@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_name] = @user.name
       redirect_to "/", notice: "Vous êtes connecté"
     else
-      redirect_to log_in_path, alert: "Mauvais user ou mot de passe"
+      redirect_to log_in_path, alert: "Mauvais nom d'utilisateur ou mot de passe"
     end
   end
 

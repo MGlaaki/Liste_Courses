@@ -15,23 +15,28 @@
     <div class="jumbotron">
       <h1 class="col-sm-offset-2"> Lite Courses</h1>
       <% if session[:user_id]%>
-      <div class="col-sm-offset-2"><%= "Connecté : #{session[:user_name].capitalize}"%>
+      <div class="col-sm-offset-2"><%= "Connecté : #{session[:user_name].capitalize}"%></div>
+      <div class="col-sm-offset-2"><%= link_to "Mon compte", user_path(session[:user_id]) %>
+        /
       <%= link_to "Se déconnecter", log_out_path %></div>
-      <div><%= link_to "Mon compte", user_path(session[:user_id]) %></div>
       <% end %>
     </div>
 
     <div class="container-fluid">
-        <div id=notice class="col-sm-offset-2"><%=notice%></div>
 
       <%= yield %>
 
 
-
       <%if (session[:user_id])%>
+        <div id=notice><%=notice%></div>
+        <br />
         <div><%= link_to "Accueil", root_path unless current_controller?('articles') %></div>
         <div><%= listes_links %></div>
         <div><%= partages_links %></div>
+      <%else%>
+        <br />
+        <div id=alert class="col-sm-offset-2"><%=alert%></div>
+        <div id=notice class="col-sm-offset-2"><%=notice%></div>
       <%end%>
     </div>
 

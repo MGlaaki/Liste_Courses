@@ -23,7 +23,7 @@ class PartagesController < ApplicationController
 
     @partage.liste_id = params[:partage][:liste_id]
     if @partage.save
-        redirect_to "/"
+        redirect_to "/", notice: "Nouveau partage créé"
     else
         @listes = Liste.where(user_id: session[:user_id])
         render new_partage_path
@@ -33,7 +33,7 @@ class PartagesController < ApplicationController
   def destroy
     @partage = Partage.find(params[:id])
     @partage.destroy
-    redirect_to "/"
+    redirect_to "/", notice:"Partage supprimé"
   end
 
 end

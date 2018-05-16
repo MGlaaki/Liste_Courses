@@ -27,13 +27,14 @@
         <%= f.submit "Sign Up", :class =>"btn btn-default, col-sm-offset-2" %>
           <% end %>
 
-
-        <%= render 'shared/errors_display', element: @user %>
-
-
-
             <div class="col-sm-offset-2">
                 <%= link_to "J'ai déjà un compte.", log_in_path %>
             </div>
+
+
+            <br />
+            <%= render 'shared/errors_display', element: @user %>
+
+
 
 </div>

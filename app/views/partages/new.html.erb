@@ -11,8 +11,9 @@
 <% end %>
 
 <% if @partage.errors.any?%>
+  <br />
 <% @partage.errors.each do |k,v| %>
-  <p><%= v unless v == "must exist"%></p>
+  <p id=alert><%= v unless v == "must exist"%></p>
   <%end%>
 <%end%>
 
